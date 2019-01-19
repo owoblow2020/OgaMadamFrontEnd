@@ -13,7 +13,7 @@ class HomeCandidatesComponent extends Component {
                                     <div className="download-sec">
                                         <div className="download-text">
                                             <h3>Download &amp; Enjoy</h3>
-                                            <p>Search, find and apply for jobs directly on your mobile device or desktop Manage all of the jobs you have applied to from a convenience secure dashboard.</p>
+                                            <p>Search, find and Request for workers directly on your mobile device or desktop Manage all of the Employee you have employed from a convenience secure dashboard.</p>
                                             <ul>
                                                 <li>
                                                     <a href="#" title>
@@ -46,7 +46,7 @@ class HomeCandidatesComponent extends Component {
                             <div className="row">
                                 <div className="col-lg-12">
                                     <div className="heading">
-                                        <h2>Featured Candidates</h2>
+                                        <h2>Featured Workers</h2>
                                         <span>Every single one of our jobs has some kind of flexibility option</span>
                                     </div>{/* Heading */}
                                     <div className="team-sec">

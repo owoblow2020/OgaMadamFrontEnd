@@ -19,7 +19,7 @@ class HomeCategoryComponent extends Component {
                                                 <div className="p-category green">
                                                     <a href="#" title>
                                                         <i className="la la-bullhorn" />
-                                                        <span>Design, Art &amp; Multimedia</span>
+                                                        <span>Maids</span>
                                                         <p>(22 open positions)</p>
                                                     </a>
                                                 </div>
@@ -28,7 +28,7 @@ class HomeCategoryComponent extends Component {
                                                 <div className="p-category green">
                                                     <a href="#" title>
                                                         <i className="la la-graduation-cap" />
-                                                        <span>Education Training</span>
+                                                        <span>Cooks</span>
                                                         <p>(6 open positions)</p>
                                                     </a>
                                                 </div>
@@ -37,7 +37,7 @@ class HomeCategoryComponent extends Component {
                                                 <div className="p-category green">
                                                     <a href="#" title>
                                                         <i className="la la-line-chart " />
-                                                        <span>Accounting / Finance</span>
+                                                        <span>Nannies</span>
                                                         <p>(3 open positions)</p>
                                                     </a>
                                                 </div>
@@ -46,7 +46,7 @@ class HomeCategoryComponent extends Component {
                                                 <div className="p-category green">
                                                     <a href="#" title>
                                                         <i className="la la-users" />
-                                                        <span>Human Resource</span>
+                                                        <span>Cleaners</span>
                                                         <p>(3 open positions)</p>
                                                     </a>
                                                 </div>
@@ -59,7 +59,7 @@ class HomeCategoryComponent extends Component {
                                                 <div className="p-category green">
                                                     <a href="#" title>
                                                         <i className="la la-phone" />
-                                                        <span>Telecommunications</span>
+                                                        <span>Cleaning Services</span>
                                                         <p>(22 open positions)</p>
                                                     </a>
                                                 </div>
@@ -68,7 +68,7 @@ class HomeCategoryComponent extends Component {
                                                 <div className="p-category green">
                                                     <a href="#" title>
                                                         <i className="la la-cutlery" />
-                                                        <span>Restaurant / Food Service</span>
+                                                        <span>Background Checks</span>
                                                         <p>(6 open positions)</p>
                                                     </a>
                                                 </div>
@@ -77,7 +77,7 @@ class HomeCategoryComponent extends Component {
                                                 <div className="p-category green">
                                                     <a href="#" title>
                                                         <i className="la la-building" />
-                                                        <span>Construction / Facilities</span>
+                                                        <span>Identity Services</span>
                                                         <p>(3 open positions)</p>
                                                     </a>
                                                 </div>
@@ -86,7 +86,7 @@ class HomeCategoryComponent extends Component {
                                                 <div className="p-category green">
                                                     <a href="#" title>
                                                         <i className="la la-user-md" />
-                                                        <span>Health</span>
+                                                        <span>Training</span>
                                                         <p>(3 open positions)</p>
                                                     </a>
                                                 </div>

@@ -11,9 +11,9 @@ class HomeApplyComponent extends Component {
                             <div className="row">
                                 <div className="col-lg-12">
                                     <div className="simple-text-block">
-                                        <h3>Make a Difference with Your Online Resume!</h3>
-                                        <span>Your resume in minutes with JobHunt resume assistant is ready!</span>
-                                        <a href="#" title className="rounded">Create an Account</a>
+                                        <h3>Make a Difference in Your Career!</h3>
+                                        <span>Oga Madam the fastest and secured means to secure a job!</span>
+                                        <a href="#" title className="rounded">Apply Job</a>
                                     </div>
                                 </div>
                             </div>
@@ -28,69 +28,69 @@ class HomeApplyComponent extends Component {
                             <div className="row">
                                 <div className="col-lg-12">
                                     <div className="heading">
-                                        <h2>Featured Jobs</h2>
+                                        <h2>Featured Workers</h2>
                                         <span>Leading Employers already using job and talent.</span>
                                     </div>{/* Heading */}
                                     <div className="job-listings-sec">
                                         <div className="job-listing rounded">
                                             <div className="job-title-sec">
                                                 <div className="c-logo"> <img src="http://placehold.it/98x51" alt /> </div>
-                                                <h3><a href="#" title>Web Designer / Developer</a></h3>
-                                                <span>Massimo Artemisis</span>
+                                                <h3><a href="#" title>Akachukwu Akunna</a></h3>
+                                                <span>Maids</span>
                                             </div>
                                             <span className="job-lctn"><i className="la la-map-marker" />Sacramento, California</span>
                                             <span className="fav-job"><i className="la la-heart-o" /></span>
-                                            <span className="job-is ft">FULL TIME</span>
+                                            <span className="job-is ft">Contact</span>
                                         </div>{/* Job */}
                                         <div className="job-listing rounded">
                                             <div className="job-title-sec">
                                                 <div className="c-logo"> <img src="http://placehold.it/98x51" alt /> </div>
-                                                <h3><a href="#" title>Marketing Director</a></h3>
-                                                <span>Tix Dog</span>
+                                                <h3><a href="#" title>Bunkechukwu Cherechi</a></h3>
+                                                <span>Cleaner</span>
                                             </div>
                                             <span className="job-lctn"><i className="la la-map-marker" />Rennes, France</span>
                                             <span className="fav-job"><i className="la la-heart-o" /></span>
-                                            <span className="job-is pt">PART TIME</span>
+                                            <span className="job-is pt">Contact</span>
                                         </div>{/* Job */}
                                         <div className="job-listing rounded">
                                             <div className="job-title-sec">
                                                 <div className="c-logo"> <img src="http://placehold.it/98x51" alt /> </div>
-                                                <h3><a href="#" title>C Developer (Senior) C .Net</a></h3>
-                                                <span>StarHealth</span>
+                                                <h3><a href="#" title>Daluolisa Ebubechukwu </a></h3>
+                                                <span>Maids</span>
                                             </div>
                                             <span className="job-lctn"><i className="la la-map-marker" />London, United Kingdom</span>
                                             <span className="fav-job"><i className="la la-heart-o" /></span>
-                                            <span className="job-is ft">FULL TIME</span>
+                                            <span className="job-is ft">Contact</span>
                                         </div>{/* Job */}
                                         <div className="job-listing rounded">
                                             <div className="job-title-sec">
                                                 <div className="c-logo"> <img src="http://placehold.it/98x51" alt /> </div>
-                                                <h3><a href="#" title>Application Developer For Android</a></h3>
-                                                <span>Altes Bank</span>
+                                                <h3><a href="#" title>Jamuike Jidenna</a></h3>
+                                                <span>Cooks</span>
                                             </div>
                                             <span className="job-lctn"><i className="la la-map-marker" />Istanbul, Turkey</span>
                                             <span className="fav-job"><i className="la la-heart-o" /></span>
-                                            <span className="job-is fl">FREELANCE</span>
+                                            <span className="job-is fl">Contact</span>
                                         </div>{/* Job */}
                                         <div className="job-listing rounded">
                                             <div className="job-title-sec">
                                                 <div className="c-logo"> <img src="http://placehold.it/98x51" alt /> </div>
-                                                <h3><a href="#" title>Regional Sales Manager South east Asia</a></h3>
-                                                <span>Vincent</span>
+                                                <h3><a href="#" title>Zamekpere Urudinachi</a></h3>
+                                                <span>Nannies</span>
                                             </div>
                                             <span className="job-lctn"><i className="la la-map-marker" />Ajax, Ontario</span>
                                             <span className="fav-job"><i className="la la-heart-o" /></span>
-                                            <span className="job-is tp">TEMPORARY</span>
+                                            <span className="job-is tp">Contact</span>
                                         </div>{/* Job */}
                                         <div className="job-listing rounded">
                                             <div className="job-title-sec">
                                                 <div className="c-logo"> <img src="http://placehold.it/98x51" alt /> </div>
-                                                <h3><a href="#" title>Social Media and Public Relation Executive </a></h3>
-                                                <span>MediaLab</span>
+                                                <h3><a href="#" title>Egoamaka Chiamaka</a></h3>
+                                                <span>Cooks</span>
                                             </div>
                                             <span className="job-lctn"><i className="la la-map-marker" />Ankara / Turkey</span>
                                             <span className="fav-job"><i className="la la-heart-o" /></span>
-                                            <span className="job-is ft">FULL TIME</span>
+                                            <span className="job-is ft">Conatct</span>
                                         </div>{/* Job */}
                                     </div>
                                 </div>
@@ -117,17 +117,17 @@ class HomeApplyComponent extends Component {
                                         <div className="how-to">
                                             <span className="how-icon"><i className="la la-user" /></span>
                                             <h3>Register an account</h3>
-                                            <p>Post a job to tell us about your project. We'll quickly match you with the right freelancers.</p>
+                                            <p>Register an account with peraonal information on the website for verification</p>
                                         </div>
                                         <div className="how-to">
                                             <span className="how-icon"><i className="la la-file-archive-o" /></span>
                                             <h3>Specify &amp; search your job</h3>
-                                            <p>Browse profiles, reviews, and proposals then interview top candidates. </p>
+                                            <p>Browse profiles, reviews, and proposals of verified workers on the platform </p>
                                         </div>
                                         <div className="how-to">
                                             <span className="how-icon"><i className="la la-list" /></span>
-                                            <h3>Apply for job</h3>
-                                            <p>Use the Upwork platform to chat, share files, and collaborate from your desktop or on the go.</p>
+                                            <h3>Contact Worker</h3>
+                                            <p>Make payment on the platform to employe any of the verified workers</p>
                                         </div>
                                     </div>
                                 </div>

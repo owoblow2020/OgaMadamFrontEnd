@@ -76,8 +76,8 @@ class HomeFooterComponent extends Component {
                                         <div className="col-lg-3 column">
                                             <div className="widget">
                                                 <div className="download_widget">
-                                                    <a href="#" title><img src="http://placehold.it/230x65" alt /></a>
-                                                    <a href="#" title><img src="http://placehold.it/230x65" alt /></a>
+                                                    <a href="#" title><img src="images/app_store.png" alt="" /></a>
+                                                    <a href="#" title><img src="images/play_store.png" alt="" /></a>
                                                 </div>
                                             </div>
                                         </div>

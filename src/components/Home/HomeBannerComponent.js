@@ -17,11 +17,11 @@ class HomeBannerComponent extends Component {
                                         <div className="row">
                                             <div className="col-lg-8">
                                                 <div className="find-cand">
-                                                    <h3>Find Candidate</h3>
+                                                    <h3>Find Workers</h3>
                                                     <span>We have 2.567 resumes in our database</span>
                                                     <form>
                                                         <div className="job-field">
-                                                            <input type="text" placeholder="Search freelancer services (e.g. logo design)" />
+                                                            <input type="text" placeholder="Search workers (e.g. Cleaners)" />
                                                         </div>
                                                         <div className="job-field">
                                                             {/* <select data-placeholder="City, province or region" className="chosen-city">
