@@ -68,7 +68,7 @@ class Menu extends Component {
                                         <a href="/about" title>About Us</a>
                                     </li>
                                     <li className="menu-item-has-children">
-                                        <a href="/" title>Contact Us</a>
+                                        <a href="/contact" title>Contact Us</a>
                                     </li>
                                     <li className="menu-item-has-children">
                                         <a href="/" title>Blog</a>
