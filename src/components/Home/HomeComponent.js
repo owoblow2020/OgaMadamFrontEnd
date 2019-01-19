@@ -13,10 +13,6 @@ class HomeComponent extends Component {
     render() {
         return (
             <div>
-                <div className="page-loading">
-                    <img src="images/loader.gif" alt="" />
-                    <span>Skip Loader</span>
-                </div>
                 <div className="theme-layout" id="scrollup">
                     <HomeMenuComponent />
                     <HomeBannerComponent />

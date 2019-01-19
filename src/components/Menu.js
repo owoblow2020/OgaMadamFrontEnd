@@ -1,26 +1,24 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-
-class HomeMenuComponent extends Component {
+class Menu extends Component {
     state = {}
     render() {
         return (
             <div>
-                <div className="responsive-header three">
+                <div className="responsive-header">
                     <div className="responsive-menubar">
                         <div className="res-logo"><a href="index.html" title><img src="http://placehold.it/178x40" alt /></a></div>
                         <div className="menu-resaction">
                             <div className="res-openmenu">
-                                <img src="images/icon5.png" alt /> Menu
+                                <img src="images/icon.png" alt /> Menu
                     </div>
                             <div className="res-closemenu">
-                                <img src="images/icon6.png" alt /> Close
+                                <img src="images/icon2.png" alt /> Close
                     </div>
                         </div>
                     </div>
                     <div className="responsive-opensec">
                         <div className="btn-extars">
-                            <a href="#" title className="post-job-btn"><i className="la la-plus" />Apply Jobs</a>
+                            <a href="#" title className="post-job-btn"><i className="la la-plus" />Post Jobs</a>
                             <ul className="account-btns">
                                 <li className="signup-popup"><a title><i className="la la-key" /> Sign Up</a></li>
                                 <li className="signin-popup"><a title><i className="la la-external-link-square" /> Login</a></li>
@@ -33,28 +31,26 @@ class HomeMenuComponent extends Component {
                         <div className="responsivemenu">
                             <ul>
                                 <li className="menu-item-has-children">
-                                    <Link to="/" >Home</Link>
-
+                                    <a href="/" title>Home</a>
                                 </li>
                                 <li className="menu-item-has-children">
-                                    <Link to="/" >About Us</Link>
+                                    <a href="/about" title>About Us</a>
                                 </li>
                                 <li className="menu-item-has-children">
-                                    <Link to="/" >Contact Us</Link>
+                                    <a href="/" title>Contact Us</a>
                                 </li>
                                 <li className="menu-item-has-children">
-                                <Link to="/" >Blog Us</Link>
+                                    <a href="/" title>Blog</a>
                                 </li>
-
                             </ul>
                         </div>
                     </div>
                 </div>
-                <header className="stick-top style3">
+                <header className="white">
                     <div className="menu-sec">
                         <div className="container">
                             <div className="logo">
-                                <a href="#" title><img src="http://placehold.it/203x34" alt /></a>
+                                <a href="index.html" title><img src="http://placehold.it/178x40" alt /></a>
                             </div>{/* Logo */}
                             <div className="btn-extars">
                                 <a href="#" title className="post-job-btn"><i className="la la-plus" />Apply Jobs</a>
@@ -66,20 +62,17 @@ class HomeMenuComponent extends Component {
                             <nav>
                                 <ul>
                                     <li className="menu-item-has-children">
-                                        <Link to="/" >Home</Link>
+                                        <a href="/" title>Home</a>
                                     </li>
                                     <li className="menu-item-has-children">
-                                        <Link to="/about" >About Us</Link>
-
+                                        <a href="/about" title>About Us</a>
                                     </li>
                                     <li className="menu-item-has-children">
-                                        <Link to="/" >Contact Us</Link>
-
+                                        <a href="/" title>Contact Us</a>
                                     </li>
                                     <li className="menu-item-has-children">
-                                        <Link to="/" >Blog</Link>
+                                        <a href="/" title>Blog</a>
                                     </li>
-
                                 </ul>
                             </nav>{/* Menus */}
                         </div>
@@ -90,4 +83,4 @@ class HomeMenuComponent extends Component {
     }
 }
 
-export default HomeMenuComponent;
+export default Menu;
