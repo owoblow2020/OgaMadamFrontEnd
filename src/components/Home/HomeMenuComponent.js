@@ -77,7 +77,7 @@ class HomeMenuComponent extends Component {
 
                                     </li>
                                     <li className="menu-item-has-children">
-                                        <Link to="/" >Blog</Link>
+                                        <Link to="/" ></Link>
                                     </li>
 
                                 </ul>

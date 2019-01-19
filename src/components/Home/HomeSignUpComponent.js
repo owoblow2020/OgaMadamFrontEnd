@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 
 class HomeSignUpComponent extends Component {
-    state = {  }
+    state = {}
     render() {
         return (
             <div>
-                                <div className="account-popup-area signup-popup-box">
+                <div className="account-popup-area signup-popup-box">
                     <div className="account-popup">
                         <span className="close-popup"><i className="la la-close" /></span>
                         <h3>Sign Up</h3>
                         <div className="select-user">
-                            <span>Candidate</span>
+                            <span></span>
                             <span>Employer</span>
                         </div>
                         <form>
@@ -27,7 +27,8 @@ class HomeSignUpComponent extends Component {
                                 <i className="la la-envelope-o" />
                             </div>
                             <div className="dropdown-field">
-                                <select data-placeholder="Please Select Specialism" className="chosen">
+                                {/* <select data-placeholder="Please Select Specialism" className="chosen"> */}
+                                <select data-placeholder="Please Select Specialism" className="chosen cfield">
                                     <option>Web Development</option>
                                     <option>Web Designing</option>
                                     <option>Art &amp; Culture</option>
@@ -49,7 +50,7 @@ class HomeSignUpComponent extends Component {
                         </div>
                     </div>
                 </div>{/* SIGNUP POPUP */}
-                
+
             </div>
         );
     }

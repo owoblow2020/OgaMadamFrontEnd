@@ -39,9 +39,6 @@ class Menu extends Component {
                                 <li className="menu-item-has-children">
                                     <a href="/" title>Contact Us</a>
                                 </li>
-                                <li className="menu-item-has-children">
-                                    <a href="/" title>Blog</a>
-                                </li>
                             </ul>
                         </div>
                     </div>
@@ -69,9 +66,6 @@ class Menu extends Component {
                                     </li>
                                     <li className="menu-item-has-children">
                                         <a href="/contact" title>Contact Us</a>
-                                    </li>
-                                    <li className="menu-item-has-children">
-                                        <a href="/" title>Blog</a>
                                     </li>
                                 </ul>
                             </nav>{/* Menus */}
