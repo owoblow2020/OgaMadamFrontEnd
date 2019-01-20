@@ -50,7 +50,7 @@ class Menu extends Component {
                                 <a href="index.html" title><img src="http://placehold.it/178x40" alt /></a>
                             </div>{/* Logo */}
                             <div className="btn-extars">
-                                <a href="#" title className="post-job-btn"><i className="la la-plus" />Apply Jobs</a>
+                                <a href="/apply" title className="post-job-btn"><i className="la la-plus" />Apply Jobs</a>
                                 <ul className="account-btns">
                                     <li className="signup-popup"><a title><i className="la la-key" /> Sign Up</a></li>
                                     <li className="signin-popup"><a title><i className="la la-external-link-square" /> Login</a></li>

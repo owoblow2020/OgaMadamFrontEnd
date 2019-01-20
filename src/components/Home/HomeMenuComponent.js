@@ -20,7 +20,7 @@ class HomeMenuComponent extends Component {
                     </div>
                     <div className="responsive-opensec">
                         <div className="btn-extars">
-                            <a href="#" title className="post-job-btn"><i className="la la-plus" />Apply Jobs</a>
+                            <a href="/apply" title className="post-job-btn"><i className="la la-plus" />Apply Jobs</a>
                             <ul className="account-btns">
                                 <li className="signup-popup"><a title><i className="la la-key" /> Sign Up</a></li>
                                 <li className="signin-popup"><a title><i className="la la-external-link-square" /> Login</a></li>
@@ -37,13 +37,13 @@ class HomeMenuComponent extends Component {
 
                                 </li>
                                 <li className="menu-item-has-children">
-                                    <Link to="/" >About Us</Link>
+                                    <Link to="/about" >About Us</Link>
                                 </li>
                                 <li className="menu-item-has-children">
-                                    <Link to="/" >Contact Us</Link>
+                                    <Link to="/contact" >Contact Us</Link>
                                 </li>
                                 <li className="menu-item-has-children">
-                                <Link to="/" >Blog Us</Link>
+                                <Link to="/" ></Link>
                                 </li>
 
                             </ul>
@@ -57,7 +57,7 @@ class HomeMenuComponent extends Component {
                                 <a href="#" title><img src="http://placehold.it/203x34" alt /></a>
                             </div>{/* Logo */}
                             <div className="btn-extars">
-                                <a href="#" title className="post-job-btn"><i className="la la-plus" />Apply Jobs</a>
+                                <a href="/apply" title className="post-job-btn"><i className="la la-plus" />Apply Jobs</a>
                                 <ul className="account-btns">
                                     <li className="signup-popup"><a title><i className="la la-key" /> Sign Up</a></li>
                                     <li className="signin-popup"><a title><i className="la la-external-link-square" /> Login</a></li>
@@ -73,7 +73,7 @@ class HomeMenuComponent extends Component {
 
                                     </li>
                                     <li className="menu-item-has-children">
-                                        <Link to="/" >Contact Us</Link>
+                                        <Link to="/contact" >Contact Us</Link>
 
                                     </li>
                                     <li className="menu-item-has-children">

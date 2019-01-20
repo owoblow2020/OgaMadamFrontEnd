@@ -39,7 +39,7 @@ class HomeSignUpComponent extends Component {
                                 <input type="text" placeholder="Phone Number" />
                                 <i className="la la-phone" />
                             </div>
-                            <button type="submit">Signup</button>
+                            <button ><a href="/dashboard">Signup</a></button>
                         </form>
                         <div className="extra-login">
                             <span>Or</span>

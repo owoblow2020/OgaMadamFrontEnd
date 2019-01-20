@@ -27,7 +27,7 @@ class HomeSignInComponent extends Component {
                                 <input type="checkbox" name="cb" id="cb1" /><label htmlFor="cb1">Remember me</label>
                             </p>
                             <a href="#" title>Forgot Password?</a>
-                            <button type="submit">Login</button>
+                            <button><a href="/dashboard">Login</a></button>
                         </form>
                         <div className="extra-login">
                             <span>Or</span>

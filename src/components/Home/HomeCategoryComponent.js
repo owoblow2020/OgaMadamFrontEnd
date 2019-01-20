@@ -96,7 +96,7 @@ class HomeCategoryComponent extends Component {
                                 </div>
                                 <div className="col-lg-12">
                                     <div className="browse-all-cat green">
-                                        <a href="#" title className="rounded">Browse All Categories</a>
+                                        <a href="/candidate-list" title className="rounded">Browse All Categories</a>
                                     </div>
                                 </div>
                             </div>

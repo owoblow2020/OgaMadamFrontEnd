@@ -7,6 +7,7 @@ import HomeCandidatesComponent from './HomeCandidatesComponent';
 import HomeFooterComponent from './HomeFooterComponent';
 import HomeSignInComponent from './HomeSignInComponent';
 import HomeSignUpComponent from './HomeSignUpComponent';
+import Footer from '../Footer';
 
 class HomeComponent extends Component {
     state = {}
@@ -19,7 +20,8 @@ class HomeComponent extends Component {
                     <HomeCategoryComponent />
                     <HomeApplyComponent />
                     <HomeCandidatesComponent />
-                    <HomeFooterComponent />
+                    {/* <HomeFooterComponent /> */}
+                    <Footer />
                 </div>
                 <HomeSignInComponent />
                 <HomeSignUpComponent />

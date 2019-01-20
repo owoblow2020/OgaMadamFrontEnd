@@ -12,8 +12,8 @@ class HomeApplyComponent extends Component {
                                 <div className="col-lg-12">
                                     <div className="simple-text-block">
                                         <h3>Make a Difference in Your Career!</h3>
-                                        <span>Oga Madam the fastest and secured means to secure a job!</span>
-                                        <a href="#" title className="rounded">Apply Job</a>
+                                        <span>Oga Madam the fast and secured means to secure a job!</span>
+                                        <a href="/apply" title className="rounded">Apply Job</a>
                                     </div>
                                 </div>
                             </div>
@@ -40,7 +40,7 @@ class HomeApplyComponent extends Component {
                                             </div>
                                             <span className="job-lctn"><i className="la la-map-marker" />Sacramento, California</span>
                                             <span className="fav-job"><i className="la la-heart-o" /></span>
-                                            <span className="job-is ft">Contact</span>
+                                            <span className="job-is ft"><a href="/view-candidate">View</a></span>
                                         </div>{/* Job */}
                                         <div className="job-listing rounded">
                                             <div className="job-title-sec">
@@ -50,7 +50,7 @@ class HomeApplyComponent extends Component {
                                             </div>
                                             <span className="job-lctn"><i className="la la-map-marker" />Rennes, France</span>
                                             <span className="fav-job"><i className="la la-heart-o" /></span>
-                                            <span className="job-is pt">Contact</span>
+                                            <span className="job-is pt"><a href="/view-candidate">View</a></span>
                                         </div>{/* Job */}
                                         <div className="job-listing rounded">
                                             <div className="job-title-sec">
@@ -60,7 +60,7 @@ class HomeApplyComponent extends Component {
                                             </div>
                                             <span className="job-lctn"><i className="la la-map-marker" />London, United Kingdom</span>
                                             <span className="fav-job"><i className="la la-heart-o" /></span>
-                                            <span className="job-is ft">Contact</span>
+                                            <span className="job-is ft"><a href="/view-candidate">View</a></span>
                                         </div>{/* Job */}
                                         <div className="job-listing rounded">
                                             <div className="job-title-sec">
@@ -70,7 +70,7 @@ class HomeApplyComponent extends Component {
                                             </div>
                                             <span className="job-lctn"><i className="la la-map-marker" />Istanbul, Turkey</span>
                                             <span className="fav-job"><i className="la la-heart-o" /></span>
-                                            <span className="job-is fl">Contact</span>
+                                            <span className="job-is fl"><a href="/view-candidate">View</a></span>
                                         </div>{/* Job */}
                                         <div className="job-listing rounded">
                                             <div className="job-title-sec">
@@ -80,7 +80,7 @@ class HomeApplyComponent extends Component {
                                             </div>
                                             <span className="job-lctn"><i className="la la-map-marker" />Ajax, Ontario</span>
                                             <span className="fav-job"><i className="la la-heart-o" /></span>
-                                            <span className="job-is tp">Contact</span>
+                                            <span className="job-is tp"><a href="/view-candidate">View</a></span>
                                         </div>{/* Job */}
                                         <div className="job-listing rounded">
                                             <div className="job-title-sec">
@@ -90,13 +90,13 @@ class HomeApplyComponent extends Component {
                                             </div>
                                             <span className="job-lctn"><i className="la la-map-marker" />Ankara / Turkey</span>
                                             <span className="fav-job"><i className="la la-heart-o" /></span>
-                                            <span className="job-is ft">Conatct</span>
+                                            <span className="job-is ft"><a href="/view-candidate">View</a></span>
                                         </div>{/* Job */}
                                     </div>
                                 </div>
                                 <div className="col-lg-12">
                                     <div className="browse-all-cat green">
-                                        <a href="#" title className="rounded">Load more listings</a>
+                                        <a href="/candidate-list" title className="rounded">Load more listings</a>
                                     </div>
                                 </div>
                             </div>
@@ -117,7 +117,7 @@ class HomeApplyComponent extends Component {
                                         <div className="how-to">
                                             <span className="how-icon"><i className="la la-user" /></span>
                                             <h3>Register an account</h3>
-                                            <p>Register an account with peraonal information on the website for verification</p>
+                                            <p>Register an account with personal information on the website for verification</p>
                                         </div>
                                         <div className="how-to">
                                             <span className="how-icon"><i className="la la-file-archive-o" /></span>
