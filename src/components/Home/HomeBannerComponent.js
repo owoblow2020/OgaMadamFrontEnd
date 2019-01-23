@@ -10,9 +10,9 @@ class HomeBannerComponent extends Component {
                         <div className="row">
                             <div className="col-lg-12">
                                 <div className="find-cand-sec">
-                                    <div className="iconmove"><img className="animute" src="images/resource/iconmove.jpg" alt /></div>
-                                    <div className="mockup-top"><img className="animute" src="images/job4.png" alt /></div>
-                                    <div className="mockup-bottom"><img src="images/job3.png" alt="" width="689" height="528" /></div>
+                                    <div className="iconmove"><img className="animute" src="images/resource/iconmove.jpg" alt="true" /></div>
+                                    <div className="mockup-top"><img className="animute" src="images/job4.png" alt="true" /></div>
+                                    <div className="mockup-bottom"><img src="images/job3.png" alt="true" width="689" height="528" /></div>
                                     <div className="container">
                                         <div className="row">
                                             <div className="col-lg-8">
@@ -40,7 +40,7 @@ class HomeBannerComponent extends Component {
                                     </div>
                                 </div>
                                 <div className="scroll-to style2">
-                                    <a href="#scroll-here" title><i className="la la-arrow-down" /></a>
+                                    <a href="#scroll-here" title=""><i className="la la-arrow-down" /></a>
                                 </div>
                             </div>
                         </div>

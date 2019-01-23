@@ -7,12 +7,15 @@ import CandidateFormComponent from '../components/Candidate/CandidateFormCompone
 import CandidateListComponenet from '../components/Candidate/CandidateListComponenet';
 import CandidatePageComponent from '../components/Candidate/CandidatePageComponent';
 import CandidateDashboard from '../components/Candidate/CandidateDashboard';
+import ErrorComponent from '../components/ErrorComponent';
+import Test from '../components/Test';
 
 class RouteComponent extends Component {
     state = {}
     render() {
         return (
-            <BrowserRouter>
+            // basename="/ogamadam"
+            <BrowserRouter >
                 <div>
                     <Switch>
                         <Route path="/" component={HomeComponent} exact />
@@ -21,6 +24,8 @@ class RouteComponent extends Component {
                         <Route path="/apply" component={CandidateFormComponent} />
                         <Route path="/candidate-list" component={CandidateListComponenet} />
                         <Route path="/view-candidate" component={CandidatePageComponent} />
+                        <Route path="/test" component={Test} />
+                        <Route component={ErrorComponent} />
                         {/* private route */}
                         <Route path="/dashboard" component={CandidateDashboard} />
                     </Switch>

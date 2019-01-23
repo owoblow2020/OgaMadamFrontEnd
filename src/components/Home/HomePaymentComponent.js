@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 
 class HomePaymentComponent extends Component {
     state = {}
@@ -28,7 +29,7 @@ class HomePaymentComponent extends Component {
                                                 <li>Job displayed for 20 days</li>
                                                 <li>Premium Support 24/7</li>
                                             </ul>
-                                            <a href="#" title>BUY NOW</a>
+                                            <Link to="">BUY NOW</Link>
                                         </div>
                                     </div>
                                     <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12">
@@ -44,7 +45,7 @@ class HomePaymentComponent extends Component {
                                                 <li>Job displayed for 30 days</li>
                                                 <li>Premium Support 24/7</li>
                                             </ul>
-                                            <a href="#" title>BUY NOW</a>
+                                            <Link to="">BUY NOW</Link>
                                         </div>
                                     </div>
                                     <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12">
@@ -76,7 +77,7 @@ class HomePaymentComponent extends Component {
                                                 <li>Job displayed for 80 days</li>
                                                 <li>Premium Support 24/7</li>
                                             </ul>
-                                            <a href="#" title>BUY NOW</a>
+                                            <Link to="">BUY NOW</Link>
                                         </div>
                                     </div>
                                 </div>

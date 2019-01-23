@@ -3,6 +3,7 @@ import Menu from '../Menu';
 import HomeSignInComponent from '../Home/HomeSignInComponent';
 import HomeSignUpComponent from '../Home/HomeSignUpComponent';
 import Footer from '../Footer';
+import {Link} from 'react-router-dom';
 
 class CandidateListComponenet extends Component {
     state = {  }
@@ -48,11 +49,11 @@ class CandidateListComponenet extends Component {
                         <div className="emply-list-sec">
                           <div className="emply-list">
                             <div className="emply-list-thumb">
-                              <a href="#" title><img src="http://placehold.it/80x80" alt /></a>
+                              <Link to=""><img src="http://placehold.it/80x80" alt="" /></Link>
                             </div>
                             <div className="emply-list-info">
                               <div className="emply-pstn">4 Open Position</div>
-                              <h3><a href="#" title>King LLC</a></h3>
+                              <h3><Link to="">King LLC</Link></h3>
                               <span>Accountancy, Human Resources</span>
                               <h6><i className="la la-map-marker" /> Toronto, Ontario</h6>
                               <p>The Heavy Equipment / Grader Operator  is responsible for operating one or several types construction equipment, such as front end loader, roller, bulldozer, or excavator to move,…</p>
@@ -60,11 +61,11 @@ class CandidateListComponenet extends Component {
                           </div>{/* Employe List */}
                           <div className="emply-list">
                             <div className="emply-list-thumb">
-                              <a href="#" title><img src="http://placehold.it/80x80" alt /></a>
+                              <Link to=""><img src="http://placehold.it/80x80" alt="" /></Link>
                             </div>
                             <div className="emply-list-info">
                               <div className="emply-pstn">4 Open Position</div>
-                              <h3><a href="#" title>Telimed</a></h3>
+                              <h3><Link to="">Telimed</Link></h3>
                               <span>Accounting Assistant, Arts, Design, and Media</span>
                               <h6><i className="la la-map-marker" /> Toronto, Ontario</h6>
                               <p>The Heavy Equipment / Grader Operator  is responsible for operating one or several types construction equipment, such as front end loader, roller, bulldozer, or excavator to move,…</p>
@@ -72,11 +73,11 @@ class CandidateListComponenet extends Component {
                           </div>{/* Employe List */}
                           <div className="emply-list">
                             <div className="emply-list-thumb">
-                              <a href="#" title><img src="http://placehold.it/80x80" alt /></a>
+                              <Link to=""><img src="http://placehold.it/80x80" alt="" /></Link>
                             </div>
                             <div className="emply-list-info">
                               <div className="emply-pstn">4 Open Position</div>
-                              <h3><a href="#" title>Ucess</a></h3>
+                              <h3><Link to="">Ucess</Link></h3>
                               <span>Arts, Design, and Media, Web Developer</span>
                               <h6><i className="la la-map-marker" /> Toronto, Ontario</h6>
                               <p>The Heavy Equipment / Grader Operator  is responsible for operating one or several types construction equipment, such as front end loader, roller, bulldozer, or excavator to move,…</p>
@@ -84,11 +85,11 @@ class CandidateListComponenet extends Component {
                           </div>{/* Employe List */}
                           <div className="emply-list">
                             <div className="emply-list-thumb">
-                              <a href="#" title><img src="http://placehold.it/80x80" alt /></a>
+                              <Link to=""><img src="http://placehold.it/80x80" alt="" /></Link>
                             </div>
                             <div className="emply-list-info">
                               <div className="emply-pstn">4 Open Position</div>
-                              <h3><a href="#" title>Airbnb</a></h3>
+                              <h3><Link to="">Airbnb</Link></h3>
                               <span>Arts, Design, and Media</span>
                               <h6><i className="la la-map-marker" /> Toronto, Ontario</h6>
                               <p>The Heavy Equipment / Grader Operator  is responsible for operating one or several types construction equipment, such as front end loader, roller, bulldozer, or excavator to move,…</p>
@@ -96,11 +97,11 @@ class CandidateListComponenet extends Component {
                           </div>{/* Employe List */}
                           <div className="emply-list">
                             <div className="emply-list-thumb">
-                              <a href="#" title><img src="http://placehold.it/80x80" alt /></a>
+                              <Link to=""><img src="http://placehold.it/80x80" alt="" /></Link>
                             </div>
                             <div className="emply-list-info">
                               <div className="emply-pstn">4 Open Position</div>
-                              <h3><a href="#" title>TeraPlaner</a></h3>
+                              <h3><Link to="">TeraPlaner</Link></h3>
                               <span>Financial Services, Sales &amp; Marketing</span>
                               <h6><i className="la la-map-marker" /> Toronto, Ontario</h6>
                               <p>The Heavy Equipment / Grader Operator  is responsible for operating one or several types construction equipment, such as front end loader, roller, bulldozer, or excavator to move,…</p>
@@ -108,11 +109,11 @@ class CandidateListComponenet extends Component {
                           </div>{/* Employe List */}
                           <div className="emply-list">
                             <div className="emply-list-thumb">
-                              <a href="#" title><img src="http://placehold.it/80x80" alt /></a>
+                              <Link to=""><img src="http://placehold.it/80x80" alt="" /></Link>
                             </div>
                             <div className="emply-list-info">
                               <div className="emply-pstn">4 Open Position</div>
-                              <h3><a href="#" title>King LLC</a></h3>
+                              <h3><Link to="">King LLC</Link></h3>
                               <span>Accountancy, Human Resources</span>
                               <h6><i className="la la-map-marker" /> Toronto, Ontario</h6>
                               <p>The Heavy Equipment / Grader Operator  is responsible for operating one or several types construction equipment, such as front end loader, roller, bulldozer, or excavator to move,…</p>
@@ -120,11 +121,11 @@ class CandidateListComponenet extends Component {
                           </div>{/* Employe List */}
                           <div className="emply-list">
                             <div className="emply-list-thumb">
-                              <a href="#" title><img src="http://placehold.it/80x80" alt /></a>
+                              <Link to=""><img src="http://placehold.it/80x80" alt="" /></Link>
                             </div>
                             <div className="emply-list-info">
                               <div className="emply-pstn">4 Open Position</div>
-                              <h3><a href="#" title>King LLC</a></h3>
+                              <h3><Link to="">King LLC</Link></h3>
                               <span>Accountancy, Human Resources</span>
                               <h6><i className="la la-map-marker" /> Toronto, Ontario</h6>
                               <p>The Heavy Equipment / Grader Operator  is responsible for operating one or several types construction equipment, such as front end loader, roller, bulldozer, or excavator to move,…</p>
@@ -132,13 +133,13 @@ class CandidateListComponenet extends Component {
                           </div>{/* Employe List */}
                           <div className="pagination">
                             <ul>
-                              <li className="prev"><a href><i className="la la-long-arrow-left" /> Prev</a></li>
-                              <li><a href>1</a></li>
-                              <li className="active"><a href>2</a></li>
-                              <li><a href>3</a></li>
+                              <li className="prev"><Link to=""><i className="la la-long-arrow-left" /> Prev</Link></li>
+                              <li><Link to="">1</Link></li>
+                              <li className="active"><Link to="">2</Link></li>
+                              <li><Link to="">3</Link></li>
                               <li><span className="delimeter">...</span></li>
-                              <li><a href>14</a></li>
-                              <li className="next"><a href>Next <i className="la la-long-arrow-right" /></a></li>
+                              <li><Link to="">14</Link></li>
+                              <li className="next"><Link to="">Next <i className="la la-long-arrow-right" /></Link></li>
                             </ul>
                           </div>{/* Pagination */}
                         </div>

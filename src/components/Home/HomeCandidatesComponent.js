@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 class HomeCandidatesComponent extends Component {
     state = {}
     render() {
@@ -16,18 +17,18 @@ class HomeCandidatesComponent extends Component {
                                             <p>Search, find and Request for workers directly on your mobile device or desktop Manage all of the Employee you have employed from a convenience secure dashboard.</p>
                                             <ul>
                                                 <li>
-                                                    <a href="#" title>
+                                                    <Link to="">
                                                         <i className="la la-apple" />
                                                         <span>App Store</span>
                                                         <p>Available now on the</p>
-                                                    </a>
+                                                    </Link>
                                                 </li>
                                                 <li>
-                                                    <a href="#" title>
+                                                <Link to="">
                                                         <i className="la la-android" />
                                                         <span>Google Play</span>
                                                         <p>Get in on</p>
-                                                    </a>
+                                                   </Link>
                                                 </li>
                                             </ul>
                                         </div>
@@ -55,10 +56,10 @@ class HomeCandidatesComponent extends Component {
                                                 <div className="team">
                                                     <div className="team-img"><img src="http://grandetest.com/theme/jobhunt-html/images/resource/t1.jpg" alt="" /></div>
                                                     <div className="team-detail">
-                                                        <h3><a href="#" title>Amanda Cook</a></h3>
+                                                        <h3><Link to="">Amanda Cook</Link></h3>
                                                         <span>I Knew You Were Trouble</span>
                                                         <p>The Random Name Generator is a simple fiction writing tool…</p>
-                                                        <a href="#" title>View Resume <i className="la la-long-arrow-right" /></a>
+                                                        <Link to="">View Resume <i className="la la-long-arrow-right" /></Link>
                                                     </div>
                                                 </div>{/* Team */}
                                             </div>
@@ -66,10 +67,10 @@ class HomeCandidatesComponent extends Component {
                                                 <div className="team">
                                                     <div className="team-img"><img src="http://grandetest.com/theme/jobhunt-html/images/resource/t2.jpg" alt="" /></div>
                                                     <div className="team-detail">
-                                                        <h3><a href="#" title>İbrahim Agay</a></h3>
+                                                        <h3><Link to="">İbrahim Agay</Link></h3>
                                                         <span>Developer</span>
                                                         <p>The Random Name Generator is a simple fiction writing tool…</p>
-                                                        <a href="#" title>View Resume <i className="la la-long-arrow-right" /></a>
+                                                        <Link to="">View Resume <i className="la la-long-arrow-right" /></Link>
                                                     </div>
                                                 </div>{/* Team */}
                                             </div>
@@ -77,10 +78,10 @@ class HomeCandidatesComponent extends Component {
                                                 <div className="team">
                                                     <div className="team-img"><img src="http://grandetest.com/theme/jobhunt-html/images/resource/t3.jpg" alt="" /></div>
                                                     <div className="team-detail">
-                                                        <h3><a href="#" title>Ali Tufan</a></h3>
+                                                        <h3><Link to="">Ali Tufan</Link></h3>
                                                         <span>Senior UI / UX Designer</span>
                                                         <p>The Random Name Generator is a simple fiction writing tool…</p>
-                                                        <a href="#" title>View Resume <i className="la la-long-arrow-right" /></a>
+                                                        <Link to="">View Resume <i className="la la-long-arrow-right" /></Link>
                                                     </div>
                                                 </div>{/* Team */}
                                             </div>
@@ -88,10 +89,10 @@ class HomeCandidatesComponent extends Component {
                                                 <div className="team">
                                                     <div className="team-img"><img src="http://grandetest.com/theme/jobhunt-html/images/resource/t2.jpg" alt="" /></div>
                                                     <div className="team-detail">
-                                                        <h3><a href="#" title>Juan Suso</a></h3>
+                                                        <h3><Link to="">Juan Suso</Link></h3>
                                                         <span>IT Outsource Company</span>
                                                         <p>The Random Name Generator is a simple fiction writing tool…</p>
-                                                        <a href="#" title>View Resume <i className="la la-long-arrow-right" /></a>
+                                                        <Link to="">View Resume <i className="la la-long-arrow-right" /></Link>
                                                     </div>
                                                 </div>{/* Team */}
                                             </div>
@@ -99,10 +100,10 @@ class HomeCandidatesComponent extends Component {
                                                 <div className="team">
                                                     <div className="team-img"><img src="http://grandetest.com/theme/jobhunt-html/images/resource/t2.jpg" alt="" /></div>
                                                     <div className="team-detail">
-                                                        <h3><a href="#" title>Senimae Zuis</a></h3>
+                                                        <h3><Link to="">Senimae Zuis</Link></h3>
                                                         <span>Web Designer</span>
                                                         <p>The Random Name Generator is a simple fiction writing tool…</p>
-                                                        <a href="#" title>View Resume <i className="la la-long-arrow-right" /></a>
+                                                        <Link to="">View Resume <i className="la la-long-arrow-right" /></Link>
                                                     </div>
                                                 </div>{/* Team */}
                                             </div>

@@ -4,7 +4,6 @@ import HomeBannerComponent from './HomeBannerComponent';
 import HomeCategoryComponent from './HomeCategoryComponent';
 import HomeApplyComponent from './HomeApplyComponent';
 import HomeCandidatesComponent from './HomeCandidatesComponent';
-import HomeFooterComponent from './HomeFooterComponent';
 import HomeSignInComponent from './HomeSignInComponent';
 import HomeSignUpComponent from './HomeSignUpComponent';
 import Footer from '../Footer';
@@ -20,7 +19,6 @@ class HomeComponent extends Component {
                     <HomeCategoryComponent />
                     <HomeApplyComponent />
                     <HomeCandidatesComponent />
-                    {/* <HomeFooterComponent /> */}
                     <Footer />
                 </div>
                 <HomeSignInComponent />

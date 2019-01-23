@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class HomeSignUpComponent extends Component {
     state = {}
@@ -10,7 +11,7 @@ class HomeSignUpComponent extends Component {
                         <span className="close-popup"><i className="la la-close" /></span>
                         <h3>Sign Up</h3>
                         <div className="select-user">
-                            <span></span>
+                            <span>Candidate</span>
                             <span>Employer</span>
                         </div>
                         <form>
@@ -39,13 +40,13 @@ class HomeSignUpComponent extends Component {
                                 <input type="text" placeholder="Phone Number" />
                                 <i className="la la-phone" />
                             </div>
-                            <button ><a href="/dashboard">Signup</a></button>
+                            <button ><Link to="/dashboard">SingUp</Link></button>
                         </form>
                         <div className="extra-login">
                             <span>Or</span>
                             <div className="login-social">
-                                <a className="fb-login" href="#" title><i className="fa fa-facebook" /></a>
-                                <a className="tw-login" href="#" title><i className="fa fa-twitter" /></a>
+                                <Link to="" className="fb-login"><i className="fa fa-facebook" /></Link>
+                                <Link to="" className="tw-login"><i className="fa fa-twitter" /></Link>
                             </div>
                         </div>
                     </div>

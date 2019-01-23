@@ -6,7 +6,7 @@ class Loader extends Component {
         return (
             <div>
                 <div className="page-loading">
-                    <img src="images/loader.gif" alt />
+                    <img src="images/loader.gif" alt="" />
                     <span>Skip Loader</span>
                 </div>
             </div>

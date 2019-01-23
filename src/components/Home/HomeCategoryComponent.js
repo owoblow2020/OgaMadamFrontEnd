@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom'
 class HomeCategoryComponent extends Component {
     state = {}
     render() {
@@ -17,38 +18,38 @@ class HomeCategoryComponent extends Component {
                                         <div className="row no-gape">
                                             <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                                                 <div className="p-category green">
-                                                    <a href="#" title>
+                                                <Link to="">
                                                         <i className="la la-bullhorn" />
                                                         <span>Maids</span>
                                                         <p>(22 open positions)</p>
-                                                    </a>
+                                                    </Link>
                                                 </div>
                                             </div>
                                             <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                                                 <div className="p-category green">
-                                                    <a href="#" title>
+                                                <Link to="">
                                                         <i className="la la-graduation-cap" />
                                                         <span>Cooks</span>
                                                         <p>(6 open positions)</p>
-                                                    </a>
+                                                    </Link>
                                                 </div>
                                             </div>
                                             <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                                                 <div className="p-category green">
-                                                    <a href="#" title>
+                                                <Link to="">
                                                         <i className="la la-line-chart " />
                                                         <span>Nannies</span>
                                                         <p>(3 open positions)</p>
-                                                    </a>
+                                                   </Link>
                                                 </div>
                                             </div>
                                             <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                                                 <div className="p-category green">
-                                                    <a href="#" title>
+                                                <Link to="">
                                                         <i className="la la-users" />
                                                         <span>Cleaners</span>
                                                         <p>(3 open positions)</p>
-                                                    </a>
+                                                  </Link>
                                                 </div>
                                             </div>
                                         </div>
@@ -57,38 +58,38 @@ class HomeCategoryComponent extends Component {
                                         <div className="row no-gape">
                                             <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                                                 <div className="p-category green">
-                                                    <a href="#" title>
+                                                <Link to="">
                                                         <i className="la la-phone" />
                                                         <span>Cleaning Services</span>
                                                         <p>(22 open positions)</p>
-                                                    </a>
+                                                   </Link>
                                                 </div>
                                             </div>
                                             <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                                                 <div className="p-category green">
-                                                    <a href="#" title>
+                                                <Link to="">
                                                         <i className="la la-cutlery" />
                                                         <span>Background Checks</span>
                                                         <p>(6 open positions)</p>
-                                                    </a>
+                                                    </Link>
                                                 </div>
                                             </div>
                                             <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                                                 <div className="p-category green">
-                                                    <a href="#" title>
+                                                <Link to="">
                                                         <i className="la la-building" />
                                                         <span>Identity Services</span>
                                                         <p>(3 open positions)</p>
-                                                    </a>
+                                                    </Link>
                                                 </div>
                                             </div>
                                             <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                                                 <div className="p-category green">
-                                                    <a href="#" title>
+                                                <Link to="">
                                                         <i className="la la-user-md" />
                                                         <span>Training</span>
                                                         <p>(3 open positions)</p>
-                                                    </a>
+                                                    </Link>
                                                 </div>
                                             </div>
                                         </div>
@@ -96,7 +97,8 @@ class HomeCategoryComponent extends Component {
                                 </div>
                                 <div className="col-lg-12">
                                     <div className="browse-all-cat green">
-                                        <a href="/candidate-list" title className="rounded">Browse All Categories</a>
+                                    <Link to="/candidate-list" className="rounded">Browse All Categories</Link>
+                                     
                                     </div>
                                 </div>
                             </div>

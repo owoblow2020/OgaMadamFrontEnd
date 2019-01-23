@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from "react-router-dom";
 class HomeApplyComponent extends Component {
     state = {}
     render() {
@@ -13,7 +14,7 @@ class HomeApplyComponent extends Component {
                                     <div className="simple-text-block">
                                         <h3>Make a Difference in Your Career!</h3>
                                         <span>Oga Madam the fast and secured means to secure a job!</span>
-                                        <a href="/apply" title className="rounded">Apply Job</a>
+                                        <Link to="/apply" className="rounded">Apply Job</Link>
                                     </div>
                                 </div>
                             </div>
@@ -34,69 +35,69 @@ class HomeApplyComponent extends Component {
                                     <div className="job-listings-sec">
                                         <div className="job-listing rounded">
                                             <div className="job-title-sec">
-                                                <div className="c-logo"> <img src="http://placehold.it/98x51" alt /> </div>
-                                                <h3><a href="#" title>Akachukwu Akunna</a></h3>
+                                                <div className="c-logo"> <img src="http://grandetest.com/theme/jobhunt-html/images/resource/t1.jpg" width="98" height="51" alt="" /> </div>
+                                                <h3><Link to="">Akachukwu Akunna</Link></h3>
                                                 <span>Maids</span>
                                             </div>
                                             <span className="job-lctn"><i className="la la-map-marker" />Sacramento, California</span>
                                             <span className="fav-job"><i className="la la-heart-o" /></span>
-                                            <span className="job-is ft"><a href="/view-candidate">View</a></span>
+                                            <span className="job-is ft"><Link to="/view-candidate">View</Link></span>
                                         </div>{/* Job */}
                                         <div className="job-listing rounded">
                                             <div className="job-title-sec">
-                                                <div className="c-logo"> <img src="http://placehold.it/98x51" alt /> </div>
-                                                <h3><a href="#" title>Bunkechukwu Cherechi</a></h3>
+                                                <div className="c-logo"> <img src="http://grandetest.com/theme/jobhunt-html/images/resource/t3.jpg" width="98" height="51" alt="" /> </div>
+                                                <h3><Link to="">Bunkechukwu Cherechi</Link></h3>
                                                 <span>Cleaner</span>
                                             </div>
                                             <span className="job-lctn"><i className="la la-map-marker" />Rennes, France</span>
                                             <span className="fav-job"><i className="la la-heart-o" /></span>
-                                            <span className="job-is pt"><a href="/view-candidate">View</a></span>
+                                            <span className="job-is pt"><Link to="/view-candidate">View</Link></span>
                                         </div>{/* Job */}
                                         <div className="job-listing rounded">
                                             <div className="job-title-sec">
-                                                <div className="c-logo"> <img src="http://placehold.it/98x51" alt /> </div>
-                                                <h3><a href="#" title>Daluolisa Ebubechukwu </a></h3>
+                                                <div className="c-logo"> <img src="http://grandetest.com/theme/jobhunt-html/images/resource/t2.jpg" width="98" height="51" alt="" /> </div>
+                                                <h3><Link to="">Daluolisa Ebubechukwu </Link></h3>
                                                 <span>Maids</span>
                                             </div>
                                             <span className="job-lctn"><i className="la la-map-marker" />London, United Kingdom</span>
                                             <span className="fav-job"><i className="la la-heart-o" /></span>
-                                            <span className="job-is ft"><a href="/view-candidate">View</a></span>
+                                            <span className="job-is ft"><Link to="/view-candidate">View</Link></span>
                                         </div>{/* Job */}
                                         <div className="job-listing rounded">
                                             <div className="job-title-sec">
-                                                <div className="c-logo"> <img src="http://placehold.it/98x51" alt /> </div>
-                                                <h3><a href="#" title>Jamuike Jidenna</a></h3>
+                                                <div className="c-logo"> <img src="http://grandetest.com/theme/jobhunt-html/images/resource/t3.jpg" width="98" height="51" alt="" /> </div>
+                                                <h3><Link to="">Jamuike Jidenna</Link></h3>
                                                 <span>Cooks</span>
                                             </div>
                                             <span className="job-lctn"><i className="la la-map-marker" />Istanbul, Turkey</span>
                                             <span className="fav-job"><i className="la la-heart-o" /></span>
-                                            <span className="job-is fl"><a href="/view-candidate">View</a></span>
+                                            <span className="job-is fl"><Link to="/view-candidate">View</Link></span>
                                         </div>{/* Job */}
                                         <div className="job-listing rounded">
                                             <div className="job-title-sec">
-                                                <div className="c-logo"> <img src="http://placehold.it/98x51" alt /> </div>
-                                                <h3><a href="#" title>Zamekpere Urudinachi</a></h3>
+                                                <div className="c-logo"> <img src="http://grandetest.com/theme/jobhunt-html/images/resource/t1.jpg" width="98" height="51" alt="" /> </div>
+                                                <h3><Link to="">Zamekpere Urudinachi</Link></h3>
                                                 <span>Nannies</span>
                                             </div>
                                             <span className="job-lctn"><i className="la la-map-marker" />Ajax, Ontario</span>
                                             <span className="fav-job"><i className="la la-heart-o" /></span>
-                                            <span className="job-is tp"><a href="/view-candidate">View</a></span>
+                                            <span className="job-is tp"><Link to="/view-candidate">View</Link></span>
                                         </div>{/* Job */}
                                         <div className="job-listing rounded">
                                             <div className="job-title-sec">
-                                                <div className="c-logo"> <img src="http://placehold.it/98x51" alt /> </div>
-                                                <h3><a href="#" title>Egoamaka Chiamaka</a></h3>
+                                                <div className="c-logo"> <img src="http://grandetest.com/theme/jobhunt-html/images/resource/t2.jpg" width="98" height="51" alt="" /> </div>
+                                                <h3><Link to="">Egoamaka Chiamaka</Link></h3>
                                                 <span>Cooks</span>
                                             </div>
                                             <span className="job-lctn"><i className="la la-map-marker" />Ankara / Turkey</span>
                                             <span className="fav-job"><i className="la la-heart-o" /></span>
-                                            <span className="job-is ft"><a href="/view-candidate">View</a></span>
+                                            <span className="job-is ft"><Link to="/view-candidate">View</Link></span>
                                         </div>{/* Job */}
                                     </div>
                                 </div>
                                 <div className="col-lg-12">
                                     <div className="browse-all-cat green">
-                                        <a href="/candidate-list" title className="rounded">Load more listings</a>
+                                        <Link to="/candidate-list" className="rounded">Load more listings</Link>
                                     </div>
                                 </div>
                             </div>

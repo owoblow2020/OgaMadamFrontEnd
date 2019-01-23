@@ -3,6 +3,7 @@ import HomeSignInComponent from '../Home/HomeSignInComponent';
 import HomeSignUpComponent from '../Home/HomeSignUpComponent';
 import Footer from '../Footer';
 import Menu from '../Menu';
+import {Link} from 'react-router-dom';
 
 class CandidatePageComponent extends Component {
     state = {}
@@ -18,7 +19,7 @@ class CandidatePageComponent extends Component {
                                     <div className="col-lg-8 column">
                                         <div className="job-single-sec">
                                             <div className="job-single-head">
-                                                <div className="job-thumb"> <img src="http://placehold.it/107x101" alt /> </div>
+                                                <div className="job-thumb"> <img src="http://placehold.it/107x101" alt="" /> </div>
                                                 <div className="job-head-info">
                                                     <h4>Tix Dog</h4>
                                                     <span>274 Seven Sisters Road, London, N4 2HY</span>
@@ -52,7 +53,7 @@ class CandidatePageComponent extends Component {
                                                 </ul>
                                             </div>
                                             <div className="share-bar">
-                                                <span>Share</span><a href="#" title className="share-fb"><i className="fa fa-facebook" /></a><a href="#" title className="share-twitter"><i className="fa fa-twitter" /></a>
+                                                <span>Share</span><Link to="" className="share-fb"><i className="fa fa-facebook" /></Link><Link to="" className="share-twitter"><i className="fa fa-twitter" /></Link>
                                             </div>
                                             <div className="recent-jobs">
                                                 <h3>Recent Jobs</h3>
@@ -60,8 +61,8 @@ class CandidatePageComponent extends Component {
                                                     <div className="job-listings-sec no-border">
                                                         <div className="job-listing wtabs">
                                                             <div className="job-title-sec">
-                                                                <div className="c-logo"> <img src="http://placehold.it/98x51" alt /> </div>
-                                                                <h3><a href="#" title>Web Designer / Developer</a></h3>
+                                                                <div className="c-logo"> <img src="http://placehold.it/98x51" alt="" /> </div>
+                                                                <h3><Link to="">Web Designer / Developer</Link></h3>
                                                                 <span>Massimo Artemisis</span>
                                                                 <div className="job-lctn"><i className="la la-map-marker" />Sacramento, California</div>
                                                             </div>
@@ -73,8 +74,8 @@ class CandidatePageComponent extends Component {
                                                         </div>
                                                         <div className="job-listing wtabs">
                                                             <div className="job-title-sec">
-                                                                <div className="c-logo"> <img src="http://placehold.it/98x51" alt /> </div>
-                                                                <h3><a href="#" title>C Developer (Senior) C .Net</a></h3>
+                                                                <div className="c-logo"> <img src="http://placehold.it/98x51" alt="" /> </div>
+                                                                <h3><Link to="">C Developer (Senior) C .Net</Link></h3>
                                                                 <span>Massimo Artemisis</span>
                                                                 <div className="job-lctn"><i className="la la-map-marker" />Sacramento, California</div>
                                                             </div>
@@ -86,8 +87,8 @@ class CandidatePageComponent extends Component {
                                                         </div>{/* Job */}
                                                         <div className="job-listing wtabs">
                                                             <div className="job-title-sec">
-                                                                <div className="c-logo"> <img src="http://placehold.it/98x51" alt /> </div>
-                                                                <h3><a href="#" title>Regional Sales Manager South</a></h3>
+                                                                <div className="c-logo"> <img src="http://placehold.it/98x51" alt="" /> </div>
+                                                                <h3><Link to="">Regional Sales Manager South</Link></h3>
                                                                 <span>Massimo Artemisis</span>
                                                                 <div className="job-lctn"><i className="la la-map-marker" />Sacramento, California</div>
                                                             </div>
@@ -99,8 +100,8 @@ class CandidatePageComponent extends Component {
                                                         </div>{/* Job */}
                                                         <div className="job-listing wtabs">
                                                             <div className="job-title-sec">
-                                                                <div className="c-logo"> <img src="http://placehold.it/98x51" alt /> </div>
-                                                                <h3><a href="#" title>Marketing Dairector</a></h3>
+                                                                <div className="c-logo"> <img src="http://placehold.it/98x51" alt="" /> </div>
+                                                                <h3><Link to="">Marketing Dairector</Link></h3>
                                                                 <span>Massimo Artemisis</span>
                                                                 <div className="job-lctn"><i className="la la-map-marker" />Sacramento, California</div>
                                                             </div>
@@ -116,9 +117,9 @@ class CandidatePageComponent extends Component {
                                         </div>
                                     </div>
                                     <div className="col-lg-4 column">
-                                        <a className="apply-thisjob" href="#" title><i className="la la-paper-plane" />Apply for job</a>
+                                    <Link to="" className="apply-thisjob"><i className="la la-paper-plane" />Apply for job</Link>
                                         <div className="apply-alternative">
-                                            <a href="#" title><i className="la la-linkedin" /> Apply with Linkedin</a>
+                                            <Link to=""><i className="la la-linkedin" /> Apply with Linkedin</Link>
                                             <span><i className="la la-heart-o" /> Shortlist</span>
                                         </div>
                                         <div className="job-overview">
@@ -135,7 +136,7 @@ class CandidatePageComponent extends Component {
                                         <div className="job-location">
                                             <h3>Job Location</h3>
                                             <div className="job-lctn-map">
-                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d926917.0482572999!2d-104.57738594649922!3d40.26036964524562!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2sUnited+States!5e0!3m2!1sen!2s!4v1513784737244" />
+                                                <iframe title="kkk" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d926917.0482572999!2d-104.57738594649922!3d40.26036964524562!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2sUnited+States!5e0!3m2!1sen!2s!4v1513784737244" />
                                             </div>
                                         </div>
                                         <div className="extra-job-info">

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 
 class Footer extends Component {
     state = {}
@@ -13,17 +14,17 @@ class Footer extends Component {
                                     <div className="widget">
                                         <div className="about_widget">
                                             <div className="logo">
-                                                <a href="#" title><img src="http://placehold.it/178x40" alt /></a>
+                                                <Link to=""><img src="http://placehold.it/178x40" alt="" /></Link>
                                             </div>
                                             <span>Collin Street West, Victor 8007, Australia.</span>
                                             <span>+1 246-345-0695</span>
                                             <span>info@jobhunt.com</span>
                                             <div className="social">
-                                                <a href="#" title><i className="fa fa-facebook" /></a>
-                                                <a href="#" title><i className="fa fa-twitter" /></a>
-                                                <a href="#" title><i className="fa fa-linkedin" /></a>
-                                                <a href="#" title><i className="fa fa-pinterest" /></a>
-                                                <a href="#" title><i className="fa fa-behance" /></a>
+                                                <Link to=""><i className="fa fa-facebook" /></Link>
+                                                <Link to=""><i className="fa fa-twitter" /></Link>
+                                                <Link to=""><i className="fa fa-linkedin" /></Link>
+                                                <Link to=""><i className="fa fa-pinterest" /></Link>
+                                                <Link to=""><i className="fa fa-behance" /></Link>
                                             </div>
                                         </div>{/* About Widget */}
                                     </div>
@@ -34,19 +35,19 @@ class Footer extends Component {
                                         <div className="link_widgets">
                                             <div className="row">
                                                 <div className="col-lg-6">
-                                                    <a href="#" title>Privacy &amp; Seurty </a>
-                                                    <a href="#" title>Terms of Serice</a>
-                                                    <a href="#" title>Communications </a>
-                                                    <a href="#" title>Referral Terms </a>
-                                                    <a href="#" title>Lending Licnses </a>
-                                                    <a href="#" title>Disclaimers </a>
+                                                    <Link to="">Privacy &amp; Seurty </Link>
+                                                    <Link to="">Terms of Serice</Link>
+                                                    <Link to="">Communications </Link>
+                                                    <Link to="">Referral Terms </Link>
+                                                    <Link to="">Lending Licnses </Link>
+                                                    <Link to="">Disclaimers </Link>
                                                 </div>
                                                 <div className="col-lg-6">
-                                                    <a href="#" title>Support </a>
-                                                    <a href="#" title>How It Works </a>
-                                                    <a href="#" title>For Employers </a>
-                                                    <a href="#" title>Underwriting </a>
-                                                    <a href="#" title>Contact Us</a>
+                                                    <Link to="">Support </Link>
+                                                    <Link to="">How It Works </Link>
+                                                    <Link to="">For Employers </Link>
+                                                    <Link to="">Underwriting </Link>
+                                                    <Link to="">Contact Us</Link>
                                                 </div>
                                             </div>
                                         </div>
@@ -58,12 +59,12 @@ class Footer extends Component {
                                         <div className="link_widgets">
                                             <div className="row">
                                                 <div className="col-lg-12">
-                                                    <a href="#" title>US Jobs</a>
-                                                    <a href="#" title>Canada Jobs</a>
-                                                    <a href="#" title>UK Jobs</a>
-                                                    <a href="#" title>Emplois en Fnce</a>
-                                                    <a href="#" title>Jobs in Deuts</a>
-                                                    <a href="#" title>Vacatures China</a>
+                                                    <Link to="">US Jobs</Link>
+                                                    <Link to="">Canada Jobs</Link>
+                                                    <Link to="">UK Jobs</Link>
+                                                    <Link to="">Emplois en Fnce</Link>
+                                                    <Link to="">Jobs in Deuts</Link>
+                                                    <Link to="">Vacatures China</Link>
                                                 </div>
                                             </div>
                                         </div>
@@ -72,8 +73,8 @@ class Footer extends Component {
                                 <div className="col-lg-3 column">
                                     <div className="widget">
                                         <div className="download_widget">
-                                            <a href="#" title><img src="images/app_store.png" alt /></a>
-                                            <a href="#" title><img src="images/play_store.png" alt /></a>
+                                            <Link to=""><img src="images/app_store.png" alt="" /></Link>
+                                            <Link to=""><img src="images/play_store.png" alt="" /></Link>
                                         </div>
                                     </div>
                                 </div>
@@ -82,7 +83,7 @@ class Footer extends Component {
                     </div>
                     <div className="bottom-line">
                         <span>© 2018 Jobhunt All rights reserved. Design by Creative Layers</span>
-                        <a href="#scrollup" className="scrollup" title><i className="la la-arrow-up" /></a>
+                        <a href="#scrollup" className="scrollup" title=""><i className="la la-arrow-up" /></a>
                     </div>
                 </footer>
             </div>

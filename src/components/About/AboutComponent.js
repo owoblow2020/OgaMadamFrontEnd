@@ -3,6 +3,7 @@ import Menu from '../Menu';
 import HomeSignInComponent from '../Home/HomeSignInComponent';
 import HomeSignUpComponent from '../Home/HomeSignUpComponent';
 import Footer from '../Footer';
+import {Link} from 'react-router-dom';
 
 class AboutComponent extends Component {
   state = {}
@@ -58,7 +59,8 @@ class AboutComponent extends Component {
                       </div>
                       <div className="tags-share">
                         <div className="share-bar">
-                          <a href="#" title className="share-fb"><i className="fa fa-facebook" /></a><a href="#" title className="share-twitter"><i className="fa fa-twitter" /></a><a href="#" title className="share-google"><i className="la la-google" /></a><span>Share</span>
+                        <Link to="" className="share-fb"><i className="fa fa-facebook" /></Link><Link to="" className="share-twitter"><i className="fa fa-twitter" /></Link><Link to="" className="share-google"><i className="la la-google" /></Link><span>Share</span>
+            
                         </div>
                       </div>
                     </div>
