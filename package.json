@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://shopudb.com.ng/ogamadam/",
   "dependencies": {
+    "axios": "^0.18.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-redux": "^6.0.0",

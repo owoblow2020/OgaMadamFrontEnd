@@ -56,7 +56,7 @@ class HomeSignInComponent extends Component {
                             <p className="remember-label">
                                 <input type="checkbox" name="cb" id="cb1" /><label htmlFor="cb1">Remember me</label>
                             </p>
-                            <button><Link to="/dashboard">Login</Link></button>
+                            <button type='submit'>Login</button>
                         </form>
                         <div className="extra-login">
                             <span>Or</span>
