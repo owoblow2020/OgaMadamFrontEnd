@@ -9,6 +9,7 @@ import CandidatePageComponent from '../components/Candidate/CandidatePageCompone
 import CandidateDashboard from '../components/Candidate/CandidateDashboard';
 import ErrorComponent from '../components/ErrorComponent';
 import Test from '../components/Test';
+import PrivateRoute from './PrivateRoute';
 
 class RouteComponent extends Component {
     state = {}
@@ -25,9 +26,10 @@ class RouteComponent extends Component {
                         <Route path="/candidate-list" component={CandidateListComponenet} />
                         <Route path="/view-candidate" component={CandidatePageComponent} />
                         <Route path="/test" component={Test} />
+                        <PrivateRoute path="/dashboard" component={CandidateDashboard} />
+                        {/* <Route path="/dashboard" component={} /> */}
                         <Route component={ErrorComponent} />
                         {/* private route */}
-                        <Route path="/dashboard" component={CandidateDashboard} />
                     </Switch>
                 </div>
             </BrowserRouter>

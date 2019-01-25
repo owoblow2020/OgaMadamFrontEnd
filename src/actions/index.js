@@ -1,8 +1,35 @@
-import { LOGIN_TASK } from "./actonTypes";
+import { LOGIN_TASK, LOGIN_SUCCESS, AUTHENTICATION } from "./actonTypes";
 
-export const loginAuth = (loginParam)=>{
+export const loginAuth = (inputName)=>{
     return{
         type: LOGIN_TASK,
-        payload: loginParam
+        email: inputName.email,
+        password:inputName.password
+    }
+}
+
+export const loginActionSuccess = (tokenParam)=>{
+    return {
+        type:LOGIN_SUCCESS,
+        isAuth: true,
+        address: tokenParam.Address,
+        bvn: tokenParam.BVN,
+        dateofbirth: tokenParam.DateOfBirth,
+        email: tokenParam.Email,
+        firstname: tokenParam.FirstName,
+        lastname: tokenParam.LastName,
+        middlename: tokenParam.MiddleName,
+        NIMC: tokenParam.NIMC,
+        phonenumber: tokenParam.PhoneNumber,
+        placeofbirth: tokenParam.PlaceOfBirth,
+        sex: tokenParam.Sex,
+        stateofOrigin: tokenParam.StateOfOrigin
+    }
+}
+
+export const authAction = (authParam) => {
+    return {
+        type:AUTHENTICATION,
+        auth:authParam.isAuth
     }
 }

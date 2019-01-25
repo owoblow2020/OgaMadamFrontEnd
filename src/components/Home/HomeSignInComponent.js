@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { loginAuth } from '../../actions';
+import { Link, withRouter } from 'react-router-dom';
+import { loginAuth, authAction } from '../../actions';
 import { connect } from 'react-redux';
+
 
 class HomeSignInComponent extends Component {
     constructor(props) {
         super(props);
         this.state = {
             username: "",
-            password: ""
+            password: "",
+            btnText:"Login"
         }
 
         this.onChange = this.onChange.bind(this);
@@ -23,13 +25,20 @@ class HomeSignInComponent extends Component {
 
     onSubmit(e) {
         e.preventDefault();
-        const post = {
-            username: this.state.username,
-            password: this.state.password
+        this.btn.setAttribute("disabled", "disabled");
+        this.setState({btnText:"Waiting....."});
+        this.props.onLogin({email:this.state.username,password:this.state.password});
+
+    }
+
+    
+    componentDidUpdate() {;
+        if (this.props.data.isAuth) {
+            console.log(this.props.data.email);
+            console.log(this.props);
+            this.props.onAuth({isAuth:true});
+            this.props.history.push('/dashboard');
         }
-
-        this.props.onLogin(post);
-
     }
 
     render() {
@@ -56,7 +65,7 @@ class HomeSignInComponent extends Component {
                             <p className="remember-label">
                                 <input type="checkbox" name="cb" id="cb1" /><label htmlFor="cb1">Remember me</label>
                             </p>
-                            <button type='submit'>Login</button>
+                            <button ref={btn => { this.btn = btn; }}  type='submit'>{this.state.btnText}</button>
                         </form>
                         <div className="extra-login">
                             <span>Or</span>
@@ -76,7 +85,7 @@ class HomeSignInComponent extends Component {
 const mapStateToProps = state => {
     console.log(state);
     return {
-
+        data:state.AuthReducer
     }
 }
 
@@ -84,8 +93,12 @@ const mapDispatchToProps = (dispatch) => {
     return {
         onLogin: (inputTaskName) => {
             dispatch(loginAuth(inputTaskName));
+        },
+
+        onAuth: (authInfo) =>{
+            dispatch(authAction(authInfo));
         }
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomeSignInComponent);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(HomeSignInComponent));

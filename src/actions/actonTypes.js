@@ -1,1 +1,3 @@
 export const LOGIN_TASK = "LOGIN_TASK";
+export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
+export const AUTHENTICATION = 'AUTHENTICATION';
