@@ -5,6 +5,7 @@ import Menu from './Menu';
 import Footer from './Footer';
 import HomeSignInComponent from './Home/HomeSignInComponent';
 import HomeSignUpComponent from './Home/HomeSignUpComponent';
+import {Link} from 'react-router-dom';
 
 class Login extends Component {
     state = {}
@@ -29,9 +30,9 @@ class Login extends Component {
                                             </div>
                                             <div className="page-breacrumbs">
                                                 <ul className="breadcrumbs">
-                                                    <li><a href="#" title>Home</a></li>
-                                                    <li><a href="#" title>Pages</a></li>
-                                                    <li><a href="#" title>Login</a></li>
+                                                    <li><Link to="">Home</Link></li>
+                                                    <li><Link to="">Pages</Link></li>
+                                                    <li><Link to="">Login</Link></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -60,14 +61,16 @@ class Login extends Component {
                                                     <p className="remember-label">
                                                         <input type="checkbox" name="cb" id="cb1" /><label htmlFor="cb1">Remember me</label>
                                                     </p>
-                                                    <a href="#" title>Forgot Password?</a>
+                                                    <Link to="">Forgot Password?</Link>
                                                     <button type="submit">Login</button>
                                                 </form>
                                                 <div className="extra-login">
                                                     <span>Or</span>
                                                     <div className="login-social">
-                                                        <a className="fb-login" href="#" title><i className="fa fa-facebook" /></a>
-                                                        <a className="tw-login" href="#" title><i className="fa fa-twitter" /></a>
+
+                                                        <Link to="" className="fb-login"><i className="fa fa-facebook" /></Link>
+                                                        <Link to="" className="tw-login"><i className="fa fa-twitter" /></Link>
+
                                                     </div>
                                                 </div>
                                             </div>
