@@ -53,8 +53,8 @@ class Menu extends Component {
                             <div className="btn-extars">
                             <Link to="/apply" className="post-job-btn"><i className="la la-plus" />Apply Jobs</Link>
                                 <ul className="account-btns">
-                                    <li className="signup-popup"><Link to=""><i className="la la-key" /> Sign Up</Link></li>
-                                    <li className="signin-popup"><Link to=""><i className="la la-external-link-square" /> Login</Link></li>
+                                    <li className="signup-popup"><i className="la la-key" /> Sign Up</li>
+                                    <li className="signin-popup"><i className="la la-external-link-square" /> Login</li>
                                 </ul>
                             </div>{/* Btn Extras */}
                             <nav>

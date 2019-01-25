@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
@@ -7,13 +7,17 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
     return (
 
         <Route {...rest} render={(props) =>
-            <h1>Dashboard</h1>
+            rest.data.auth === true ?
+            <Component {...props} />
+            : <Redirect to={{
+                pathname: '/login',
+                state: { from: props.location }
+              }} />
         } />
     )
 }
 
 const mapStateToProps = (state) => {
-    //console.log(state.LoginReducer);
     return {
         data:state.LoginReducer
     }

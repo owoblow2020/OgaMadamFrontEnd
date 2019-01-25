@@ -8,7 +8,8 @@ import CandidateListComponenet from '../components/Candidate/CandidateListCompon
 import CandidatePageComponent from '../components/Candidate/CandidatePageComponent';
 import CandidateDashboard from '../components/Candidate/CandidateDashboard';
 import ErrorComponent from '../components/ErrorComponent';
-import Test from '../components/Test';
+//import Test from '../components/Test';
+import Login from '../components/Login';
 import PrivateRoute from './PrivateRoute';
 
 class RouteComponent extends Component {
@@ -25,11 +26,12 @@ class RouteComponent extends Component {
                         <Route path="/apply" component={CandidateFormComponent} />
                         <Route path="/candidate-list" component={CandidateListComponenet} />
                         <Route path="/view-candidate" component={CandidatePageComponent} />
-                        <Route path="/test" component={Test} />
-                        <PrivateRoute path="/dashboard" component={CandidateDashboard} />
-                        {/* <Route path="/dashboard" component={} /> */}
-                        <Route component={ErrorComponent} />
+                        <Route path="/login" component={Login} />
+                        {/* <Route path="/test" component={Test} /> */}
                         {/* private route */}
+                        <PrivateRoute path="/dashboard" component={CandidateDashboard} />
+                        <Route component={ErrorComponent} />
+                        
                     </Switch>
                 </div>
             </BrowserRouter>
