@@ -16,6 +16,7 @@ class CandidateListComponenet extends Component {
     }
 
     this.onChange = this.onChange.bind(this);
+    this.onCheckBox = this.onCheckBox.bind(this);
   }
 
   componentDidMount() {
@@ -25,32 +26,37 @@ class CandidateListComponenet extends Component {
     })
   }
 
+  onCheckBox(e) {
+    let search = e.target.value;
+    let data = [];
+    if (e.target.name === 'checkbox') {
+      console.log(search);
+      data = this.props.result.filter(item => item.CategoryName === search)
+
+    }
+    this.setState({ categoryList: data });
+
+    if (e.target.checked === false) {
+      this.setState({ categoryList: this.props.result });
+    }
+  }
+
   onChange(e) {
 
     let search = e.target.value;
     let data = [];
-    if(e.target.name === 'location'){
+    if (e.target.name === 'location') {
       data = this.props.result.filter(item => item.StateOfOrigin === search)
-    }
-    if(e.target.name === 'checkbox'){
-      console.log(search);
-      data = this.props.result.filter(item => item.CategoryName === search)
-
-    }else{
+    } else {
       data = this.props.result.filter(item => item.FirstName === search
         || item.CategoryName === search || item.LastName === search || item.Sex === search)
+     
     }
     this.setState({ categoryList: data });
 
-    if(search === ''){
-      this.setState({categoryList:this.props.result});
+    if (search === '') {
+      this.setState({ categoryList: this.props.result });
     }
-
-    if(e.target.checked === false){
-      this.setState({categoryList:this.props.result});
-    }
-
-
   }
 
   render() {
@@ -66,7 +72,7 @@ class CandidateListComponenet extends Component {
                     <div className="widget">
                       <div className="search_widget_job">
                         <div className="field_w_search">
-                          <input type="text" name="search" onChange={this.onChange} placeholder="Search Keywords" />
+                          <input type="text" name="search" ref={btn => { this.btn = btn; }} onChange={this.onChange} placeholder="Search Keywords" />
                           <i className="la la-search" />
                         </div>{/* Search Widget */}
                         <div className="field_w_search">
@@ -81,7 +87,7 @@ class CandidateListComponenet extends Component {
                         {
                           this.props.cat.map(item =>
                             <div className="simple-checkbox" key={item.CategoryId}>
-                              <p><input type="checkbox" onChange={this.onChange} name="checkbox" value={item.Title} id="as" />
+                              <p><input type="checkbox" onChange={this.onCheckBox} name="checkbox" value={item.Title} id="as" />
                                 <label htmlFor="as">{item.Title} ({item.numberOfWorkers})</label>
                               </p>
                             </div>
