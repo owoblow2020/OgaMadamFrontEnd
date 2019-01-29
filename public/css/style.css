@@ -257,7 +257,8 @@ ul {
     padding: 0;
 }
 ul li{
-    color:#1e1e1e;
+    /* color:#1e1e1e; */
+    color:#fff;
     margin-bottom: 15px;
     position: relative;
 }

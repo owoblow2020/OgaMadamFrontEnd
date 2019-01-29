@@ -12,10 +12,10 @@ class HomeMenuComponent extends Component {
                         <div className="menu-resaction">
                             <div className="res-openmenu">
                                 <img src="images/icon5.png" alt="" /> Menu
-                    </div>
+                            </div>
                             <div className="res-closemenu">
                                 <img src="images/icon6.png" alt="" /> Close
-                    </div>
+                            </div>
                         </div>
                     </div>
                     <div className="responsive-opensec">
@@ -43,12 +43,13 @@ class HomeMenuComponent extends Component {
                                     <Link to="/contact" >Contact Us</Link>
                                 </li>
                                 <li className="menu-item-has-children">
-                                <Link to="/" ></Link>
+                                    <Link to="/" ></Link>
                                 </li>
 
                             </ul>
                         </div>
                     </div>
+                //
                 </div>
                 <header className="stick-top style3">
                     <div className="menu-sec">
@@ -57,7 +58,7 @@ class HomeMenuComponent extends Component {
                                 <a href="/" title=""><img src="http://placehold.it/203x34" alt="" /></a>
                             </div>{/* Logo */}
                             <div className="btn-extars">
-                            <Link to="/apply" className="post-job-btn"><i className="la la-plus" />Apply Jobs</Link>
+                                <Link to="/apply" className="post-job-btn"><i className="la la-plus" />Apply Jobs</Link>
                                 <ul className="account-btns">
                                     <li className="signup-popup"><Link to=""><i className="la la-key" /> Sign Up</Link></li>
                                     <li className="signin-popup"><Link to=""><i className="la la-external-link-square" /> Login</Link></li>

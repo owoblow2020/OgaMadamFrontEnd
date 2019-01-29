@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Menu from '../Menu';
 import HomeSignInComponent from '../Home/HomeSignInComponent';
 import HomeSignUpComponent from '../Home/HomeSignUpComponent';
 import Footer from '../Footer';
 import {Link} from 'react-router-dom';
+import Sample from '../Headers/Sample';
 
 class AboutComponent extends Component {
   state = {}
@@ -11,7 +11,8 @@ class AboutComponent extends Component {
     return (
       <div>
         <div className="theme-layout" id="scrollup">
-          <Menu />
+          
+          <Sample />
           <section>
             <div className="block no-padding  gray">
               <div className="container">

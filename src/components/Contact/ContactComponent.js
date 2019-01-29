@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import Menu from '../Menu';
+// import Menu from '../Menu';
 import Footer from '../Footer';
 import HomeSignInComponent from '../Home/HomeSignInComponent';
 import HomeSignUpComponent from '../Home/HomeSignUpComponent';
+import Sample from '../Headers/Sample';
 
 class ContactComponent extends Component {
     state = {  }
@@ -11,7 +12,8 @@ class ContactComponent extends Component {
           <div>
             <div className="theme-layout" id="scrollup">
 
-              <Menu />
+              {/* <Menu /> */}
+              <Sample />
               <section>
                 <div className="block no-padding  gray">
                   <div className="container">

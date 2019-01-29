@@ -268,3 +268,7 @@ $(window).on('load',function(){
     $('.page-loading').fadeOut();
 
 });
+
+// window.onbeforeunload = function() {
+//     localStorage.clear();
+//  }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Menu from '../Menu';
 import Footer from '../Footer';
+import Sample from '../Headers/Sample';
 
 class CandidateFormComponent extends Component {
     state = {}
@@ -8,7 +8,7 @@ class CandidateFormComponent extends Component {
         return (
             <div>
                 <div className="theme-layout" id="scrollup">
-                    <Menu />
+                    <Sample />
                     <section>
                         <div className="block remove-top">
                             <div className="container">

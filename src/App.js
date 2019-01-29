@@ -5,6 +5,7 @@ import {Provider} from 'react-redux';
 import Store  from './store';
 
 class App extends Component {
+  
   render() {
     return (
       <Provider store={Store}>        

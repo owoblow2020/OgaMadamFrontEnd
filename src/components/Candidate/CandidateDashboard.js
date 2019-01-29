@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Menu from '../Menu';
 import Footer from '../Footer';
 import {Link} from 'react-router-dom';
+import Sample from '../Headers/Sample';
 
 class CandidateDashboard extends Component {
     state = {}
@@ -9,7 +9,7 @@ class CandidateDashboard extends Component {
         return (
             <div>
                 <div className="theme-layout" id="scrollup">
-                    <Menu /> 
+                    <Sample />
                     <section>
                         <div className="block no-padding">
                             <div className="container">
