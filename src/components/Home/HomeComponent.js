@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import HomeBannerComponent from './HomeBannerComponent';
 import HomeCategoryComponent from './HomeCategoryComponent';
 import HomeApplyComponent from './HomeApplyComponent';
-import HomeCandidatesComponent from './HomeCandidatesComponent';
+// import HomeCandidatesComponent from './HomeCandidatesComponent';
 import HomeSignInComponent from './HomeSignInComponent';
 import HomeSignUpComponent from './HomeSignUpComponent';
 import Footer from '../Footer';
@@ -21,7 +21,7 @@ class HomeComponent extends Component {
                     <HomeBannerComponent />
                     <HomeCategoryComponent />
                     <HomeApplyComponent />
-                    <HomeCandidatesComponent />
+                    {/* <HomeCandidatesComponent /> */}
                     <Footer />
                 </div>
                 <HomeSignInComponent />

@@ -1,7 +1,18 @@
 import React, { Component } from 'react';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+import { connect } from 'react-redux';
+import { listWorker } from '../../actions';
+
+
 class HomeApplyComponent extends Component {
-    state = {}
+    componentDidMount() {
+        this.props.onListWorker();
+    }
+
+    Capitalize(str) {
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
     render() {
         return (
             <div>
@@ -33,66 +44,20 @@ class HomeApplyComponent extends Component {
                                         <span>Leading Employers already using job and talent.</span>
                                     </div>{/* Heading */}
                                     <div className="job-listings-sec">
-                                        <div className="job-listing rounded">
-                                            <div className="job-title-sec">
-                                                <div className="c-logo"> <img src="http://grandetest.com/theme/jobhunt-html/images/resource/t1.jpg" width="98" height="51" alt="" /> </div>
-                                                <h3><Link to="">Akachukwu Akunna</Link></h3>
-                                                <span>Maids</span>
+                                        {this.props.result.map(item =>
+                                            <div className="job-listing rounded" key={item.EmployeeId}>
+                                                <div className="job-title-sec">
+                                                    <div className="c-logo"> <img src="http://grandetest.com/theme/jobhunt-html/images/resource/t1.jpg" width="98" height="51" alt="" /> </div>
+                                                    <h3><Link to="">{this.Capitalize(item.FirstName)} {this.Capitalize(item.LastName)}</Link></h3>
+                                                    <span>{this.Capitalize(item.CategoryName)}</span>
+                                                </div>
+                                                <span className="job-lctn"><i className="la la-map-marker" />{this.Capitalize(item.StateOfOrigin)}</span>
+                                                <span className="fav-job"><i className="la la-heart-o" /></span>
+                                                <span className="job-is ft"><Link to={`/view-candidate/${ item.EmployeeId }`}>View</Link></span>
                                             </div>
-                                            <span className="job-lctn"><i className="la la-map-marker" />Sacramento, California</span>
-                                            <span className="fav-job"><i className="la la-heart-o" /></span>
-                                            <span className="job-is ft"><Link to="/view-candidate">View</Link></span>
-                                        </div>{/* Job */}
-                                        <div className="job-listing rounded">
-                                            <div className="job-title-sec">
-                                                <div className="c-logo"> <img src="http://grandetest.com/theme/jobhunt-html/images/resource/t3.jpg" width="98" height="51" alt="" /> </div>
-                                                <h3><Link to="">Bunkechukwu Cherechi</Link></h3>
-                                                <span>Cleaner</span>
-                                            </div>
-                                            <span className="job-lctn"><i className="la la-map-marker" />Rennes, France</span>
-                                            <span className="fav-job"><i className="la la-heart-o" /></span>
-                                            <span className="job-is pt"><Link to="/view-candidate">View</Link></span>
-                                        </div>{/* Job */}
-                                        <div className="job-listing rounded">
-                                            <div className="job-title-sec">
-                                                <div className="c-logo"> <img src="http://grandetest.com/theme/jobhunt-html/images/resource/t2.jpg" width="98" height="51" alt="" /> </div>
-                                                <h3><Link to="">Daluolisa Ebubechukwu </Link></h3>
-                                                <span>Maids</span>
-                                            </div>
-                                            <span className="job-lctn"><i className="la la-map-marker" />London, United Kingdom</span>
-                                            <span className="fav-job"><i className="la la-heart-o" /></span>
-                                            <span className="job-is ft"><Link to="/view-candidate">View</Link></span>
-                                        </div>{/* Job */}
-                                        <div className="job-listing rounded">
-                                            <div className="job-title-sec">
-                                                <div className="c-logo"> <img src="http://grandetest.com/theme/jobhunt-html/images/resource/t3.jpg" width="98" height="51" alt="" /> </div>
-                                                <h3><Link to="">Jamuike Jidenna</Link></h3>
-                                                <span>Cooks</span>
-                                            </div>
-                                            <span className="job-lctn"><i className="la la-map-marker" />Istanbul, Turkey</span>
-                                            <span className="fav-job"><i className="la la-heart-o" /></span>
-                                            <span className="job-is fl"><Link to="/view-candidate">View</Link></span>
-                                        </div>{/* Job */}
-                                        <div className="job-listing rounded">
-                                            <div className="job-title-sec">
-                                                <div className="c-logo"> <img src="http://grandetest.com/theme/jobhunt-html/images/resource/t1.jpg" width="98" height="51" alt="" /> </div>
-                                                <h3><Link to="">Zamekpere Urudinachi</Link></h3>
-                                                <span>Nannies</span>
-                                            </div>
-                                            <span className="job-lctn"><i className="la la-map-marker" />Ajax, Ontario</span>
-                                            <span className="fav-job"><i className="la la-heart-o" /></span>
-                                            <span className="job-is tp"><Link to="/view-candidate">View</Link></span>
-                                        </div>{/* Job */}
-                                        <div className="job-listing rounded">
-                                            <div className="job-title-sec">
-                                                <div className="c-logo"> <img src="http://grandetest.com/theme/jobhunt-html/images/resource/t2.jpg" width="98" height="51" alt="" /> </div>
-                                                <h3><Link to="">Egoamaka Chiamaka</Link></h3>
-                                                <span>Cooks</span>
-                                            </div>
-                                            <span className="job-lctn"><i className="la la-map-marker" />Ankara / Turkey</span>
-                                            <span className="fav-job"><i className="la la-heart-o" /></span>
-                                            <span className="job-is ft"><Link to="/view-candidate">View</Link></span>
-                                        </div>{/* Job */}
+                                        )}
+
+
                                     </div>
                                 </div>
                                 <div className="col-lg-12">
@@ -142,4 +107,17 @@ class HomeApplyComponent extends Component {
     }
 }
 
-export default HomeApplyComponent;
+const mapStateToProps = (state) => {
+    return {
+        result: state.SearchReducer.param
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onListWorker: () => {
+            dispatch(listWorker());
+        }
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(HomeApplyComponent);

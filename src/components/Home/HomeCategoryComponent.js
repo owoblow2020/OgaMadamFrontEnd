@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom';
+import {connect} from 'react-redux';
+import { listCategory } from '../../actions';
 class HomeCategoryComponent extends Component {
-    state = {}
+    componentDidMount() {
+        this.props.onListCategory();
+    }
     render() {
         return (
             <div>
@@ -110,4 +114,18 @@ class HomeCategoryComponent extends Component {
     }
 }
 
-export default HomeCategoryComponent;
+const mapStateToProps = (state)=>{
+    return {
+        cat: state.CategoryReducer.cat
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+      onListCategory: () => {
+        dispatch(listCategory());
+      }
+    }
+  }
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(HomeCategoryComponent));

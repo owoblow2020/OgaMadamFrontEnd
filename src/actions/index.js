@@ -1,4 +1,4 @@
-import { LOGIN_TASK, LOGIN_SUCCESS, AUTHENTICATION, HOME_SEARCH_WORKER, HOME_LIST_CATEGORY } from "./actonTypes";
+import { LOGIN_TASK, LOGIN_SUCCESS, AUTHENTICATION, HOME_SEARCH_WORKER, HOME_LIST_CATEGORY, HOME_LIST_WORKER } from "./actonTypes";
 
 export const loginAuth = (inputName)=>{
     return{
@@ -45,5 +45,11 @@ export const homeSearchWorker = (searchParam) =>{
 export const listCategory = () =>{
     return {
         type: HOME_LIST_CATEGORY
+    }
+}
+
+export const listWorker =() =>{
+    return {
+        type: HOME_LIST_WORKER
     }
 }

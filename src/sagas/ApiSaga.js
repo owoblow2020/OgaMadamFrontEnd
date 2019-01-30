@@ -1,5 +1,5 @@
 import {
-    EMPLOYEE_LOGIN_API, LOCAL_AUTHORIZATION, HOME_SEARCH_API, LIST_CATEGORY_API
+    EMPLOYEE_LOGIN_API, LOCAL_AUTHORIZATION, HOME_SEARCH_API, LIST_CATEGORY_API, HOME_SIX_WORKER
 } from './Utility';
 
 function* getToken(inputName) {
@@ -56,8 +56,25 @@ function* getCategory(){
     });
 }
 
+function* getListWorker(){
+    return yield fetch(HOME_SIX_WORKER,{
+        method:'GET',
+        headers:{
+            Accept:'application/json',
+            Authorization:LOCAL_AUTHORIZATION
+        }
+    }).then((response) => response.json())
+    .then((responseJson) => {
+        console.log(responseJson);
+        return responseJson;
+    }).catch(function(err) {
+        console.log('Category Server: '+err);
+    });
+}
+
 export const Api = {
     getToken,
     getHomeSearch,
-    getCategory
+    getCategory,
+    getListWorker
 }

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import Menu from './Menu';
 import Footer from './Footer';
 import HomeSignInComponent from './Home/HomeSignInComponent';
 import HomeSignUpComponent from './Home/HomeSignUpComponent';
 import {Link} from 'react-router-dom';
+import Sample from './Headers/Sample';
 
 class Login extends Component {
     state = {}
@@ -17,7 +17,7 @@ class Login extends Component {
         return (
             <div>
                 <div className="theme-layout" id="scrollup">
-                    <Menu />
+                    <Sample />
                     <section>
                         <div className="block no-padding  gray">
                             <div className="container">

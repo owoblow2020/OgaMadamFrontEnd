@@ -25,11 +25,12 @@ class RouteComponent extends Component {
                         <Route path="/contact" component={ContactComponent} />
                         <Route path="/apply" component={CandidateFormComponent} />
                         <Route path="/candidate-list" component={CandidateListComponenet} />
-                        <Route path="/view-candidate" component={CandidatePageComponent} />
+                        {/* <Route path="/view-candidate/:id" component={CandidatePageComponent} /> */}
                         <Route path="/login" component={Login} />
                         {/* <Route path="/test" component={Test} /> */}
                         {/* private route */}
                         <PrivateRoute path="/dashboard" component={CandidateDashboard} />
+                        <PrivateRoute path="/view-candidate/:id" component={CandidatePageComponent} />
                         <Route component={ErrorComponent} />
                         
                     </Switch>

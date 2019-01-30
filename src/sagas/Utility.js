@@ -3,6 +3,7 @@ export const HOSTNAME = 'http://localhost:50942';
 export const EMPLOYEE_LOGIN_API = HOSTNAME + "/api/Service/EmployeeLogin";
 export const HOME_SEARCH_API = HOSTNAME + "/api/Service/SearchWorkers";
 export const LIST_CATEGORY_API = HOSTNAME + '/api/Service/ListCategory';
+export const HOME_SIX_WORKER = HOSTNAME + "/api/Service/ListSixWorkers";
 
 
 //PARAMS

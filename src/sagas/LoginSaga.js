@@ -1,5 +1,5 @@
 import { takeLatest, put } from 'redux-saga/effects';
-import { LOGIN_TASK, HOME_SEARCH_WORKER, HOME_SEARCH_SUCCESS, HOME_LIST_CATEGORY, HOME_LIST_SUCCESS} from '../actions/actonTypes';
+import { LOGIN_TASK, HOME_SEARCH_WORKER, HOME_SEARCH_SUCCESS, HOME_LIST_CATEGORY, HOME_LIST_SUCCESS, HOME_LIST_WORKER} from '../actions/actonTypes';
 import { Api } from './ApiSaga';
 import { loginActionSuccess} from '../actions';
 
@@ -51,4 +51,19 @@ function* fetchCategory(){
 
 export function* watchListCategory(){
     yield takeLatest(HOME_LIST_CATEGORY, fetchCategory);
+}
+
+function* listWorker(){
+    try{
+        const search = yield Api.getListWorker();
+        if(search.ResponseCode === 200){
+            yield put({type:HOME_SEARCH_SUCCESS, param:search.Data});
+         }
+    }catch(err){
+        console.log(err);
+    }
+}
+
+export function* watchListWorker(){
+    yield takeLatest(HOME_LIST_WORKER, listWorker);
 }

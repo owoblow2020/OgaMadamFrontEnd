@@ -23,7 +23,11 @@ class CandidateListComponenet extends Component {
     this.props.onListCategory();
     this.setState({
       categoryList: this.props.result
-    })
+    });
+
+    if(this.state.categoryList === null){
+      this.props.onHomeSearch({category:"all"});
+    }
   }
 
   onCheckBox(e) {
