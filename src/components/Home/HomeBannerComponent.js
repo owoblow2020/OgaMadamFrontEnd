@@ -51,15 +51,14 @@ class HomeBannerComponent extends Component {
                                                         <div className="job-field">
                                                             <input type="text" value={this.state.category} onChange={this.onChange} name="category" placeholder="Search workers (e.g. Cleaners)" />
                                                         </div>
-                                                        <div className="job-field">
-                                                            {/* <select data-placeholder="City, province or region" className="chosen-city">
-                                                                <option>Mechanic</option>
-                                                                <option>Web Development</option>
-                                                                <option>Car Install</option>
-                                                                <option>Shoes Slippers</option>
-                                                            </select> */}
-                                                            <input type="text" value={this.state.location} onChange={this.onChange} name="location" placeholder="Enter location (e.g. Abuja)" />
-                                                        </div>
+                                                                <div className="job-field">
+                                                                    <select name="qualification" onChange={this.onChange} style={selectField} required data-placeholder="Select sex type" className="chosen-container chosen">
+                                                                        <option>Select Location</option>
+                                                                        <option vale="Bsc">Abuja</option>
+                                                                        <option value="Ond">Lagos</option>
+                                                                        <option value="Hnd">Portharcourt</option>
+                                                                    </select>
+                                                                </div>
                                                         <button type="submit"><i className="la la-search" /></button>
                                                     </form>
                                                 </div>
@@ -79,8 +78,13 @@ class HomeBannerComponent extends Component {
     }
 }
 
+const selectField = {
+    height: 50,
+    paddingLeft: 10,
+    marginRight:20
+};
+
 const mapStateToProps = (state) =>{
-    //console.log(state.SearchReducer.param);
     return {
         result: state.SearchReducer.param
     }

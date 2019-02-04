@@ -32,7 +32,6 @@ class Login extends Component {
         e.preventDefault();
         this.btn.setAttribute("disabled", "disabled");
         this.setState({btnText:"Waiting....."});
-        //console.log(this.state.email);
         this.props.onLogin({email:this.state.email,password:this.state.password});
 
     }
@@ -94,7 +93,6 @@ class Login extends Component {
                                                         <i className="la la-key" />
                                                     </div>
                                                     <p className="remember-label">
-                                                        <input type="checkbox" name="cb" id="cb1" /><label htmlFor="cb1">Remember me</label>
                                                     </p>
                                                     <Link to="">Forgot Password?</Link>
                                                     <button ref={btn => { this.btn = btn; }} type="submit">{this.state.btnText}</button>

@@ -22,7 +22,6 @@ class HomeApplyComponent extends Component {
           
             this.setState({
                 search: newProps.result
-
             });
         }
     }
