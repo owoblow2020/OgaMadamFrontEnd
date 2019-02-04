@@ -5,9 +5,29 @@ import { listWorker } from '../../actions';
 
 
 class HomeApplyComponent extends Component {
+    constructor(props){
+        super(props);
+
+        this.state = {
+            search:[]
+        }
+    }
     componentWillMount() {
         this.props.onListWorker();
     }
+
+    componentDidUpdate(prevProps, prevState) {
+        const newProps = this.props
+        if (prevProps.result !== newProps.result) {
+          
+            this.setState({
+                search: newProps.result
+
+            });
+        }
+    }
+
+
     componentDidMount() {
         
     }
@@ -47,7 +67,7 @@ class HomeApplyComponent extends Component {
                                         <span>Leading Employers already using job and talent.</span>
                                     </div>{/* Heading */}
                                     <div className="job-listings-sec">
-                                        {this.props.result.map(item =>
+                                        {this.state.search.map(item =>
                                             <div className="job-listing rounded" key={item.EmployeeId}>
                                                 <div className="job-title-sec">
                                                     <div className="c-logo"> <img src="http://grandetest.com/theme/jobhunt-html/images/resource/t1.jpg" width="98" height="51" alt="" /> </div>

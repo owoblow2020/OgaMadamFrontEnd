@@ -28,7 +28,6 @@ class CandidateFormComponent extends Component {
 
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
-        this.checkResponseCode = this.checkResponseCode.bind(this);
     }
 
     Capitalize(str) {
@@ -66,7 +65,7 @@ class CandidateFormComponent extends Component {
     componentDidUpdate(prevProps, prevState) {
         const newProps = this.props
         if (prevProps.param !== newProps.param) {
-            console.log('yes');
+           
             this.setState({
                 result: newProps.param,
                 submit: "Apply"
