@@ -5,8 +5,11 @@ import { listWorker } from '../../actions';
 
 
 class HomeApplyComponent extends Component {
-    componentDidMount() {
+    componentWillMount() {
         this.props.onListWorker();
+    }
+    componentDidMount() {
+        
     }
 
     Capitalize(str) {

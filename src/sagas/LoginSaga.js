@@ -1,5 +1,5 @@
 import { takeLatest, put } from 'redux-saga/effects';
-import { LOGIN_TASK, HOME_SEARCH_WORKER, HOME_SEARCH_SUCCESS, HOME_LIST_CATEGORY, HOME_LIST_SUCCESS, HOME_LIST_WORKER} from '../actions/actonTypes';
+import { LOGIN_TASK, HOME_SEARCH_WORKER, HOME_SEARCH_SUCCESS, HOME_LIST_CATEGORY, HOME_LIST_SUCCESS, HOME_LIST_WORKER, WORK_APPLY, WORK_APPLY_FAILED} from '../actions/actonTypes';
 import { Api } from './ApiSaga';
 import { loginActionSuccess} from '../actions';
 
@@ -66,4 +66,21 @@ function* listWorker(){
 
 export function* watchListWorker(){
     yield takeLatest(HOME_LIST_WORKER, listWorker);
+}
+
+function* workApplyAction(param){
+    try{
+        const apply = yield Api.postWorkerApply(param);
+        if(apply.ResponseCode === 200){
+            //yield put({type:HOME_SEARCH_SUCCESS, param:search.Data});
+         }else{
+             yield put({type:WORK_APPLY_FAILED, param:apply})
+         }
+    }catch(err){
+        console.log(err);
+    }
+}
+
+export function* watchWorkerApply(){
+    yield takeLatest(WORK_APPLY, workApplyAction);
 }

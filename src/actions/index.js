@@ -1,4 +1,4 @@
-import { LOGIN_TASK, LOGIN_SUCCESS, AUTHENTICATION, HOME_SEARCH_WORKER, HOME_LIST_CATEGORY, HOME_LIST_WORKER } from "./actonTypes";
+import { LOGIN_TASK, LOGIN_SUCCESS, AUTHENTICATION, HOME_SEARCH_WORKER, HOME_LIST_CATEGORY, HOME_LIST_WORKER, WORK_APPLY } from "./actonTypes";
 
 export const loginAuth = (inputName)=>{
     return{
@@ -51,5 +51,12 @@ export const listCategory = () =>{
 export const listWorker =() =>{
     return {
         type: HOME_LIST_WORKER
+    }
+}
+
+export const workApply = (workParam) =>{
+    return {
+        type:WORK_APPLY,
+        workParam
     }
 }

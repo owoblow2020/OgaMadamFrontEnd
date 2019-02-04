@@ -20,7 +20,7 @@ class Sample extends Component {
                     </div>
                     <div className="responsive-opensec">
                         <div className="btn-extars">
-                            <Link to="/apply" className="post-job-btn" ><i className="la la-plus" />Post Jobs</Link>
+                            <Link to="/apply" className="post-job-btn" ><i className="la la-plus" />Apply Jobs</Link>
                             <ul className="account-btns">
                                 <li className="signup-popup"><Link to=""><i className="la la-key" /> Sign Up</Link></li>
                                 <li className="signin-popup"><Link to=""><i className="la la-external-link-square" /> Login</Link></li>
@@ -55,7 +55,7 @@ class Sample extends Component {
                                 <Link to="/" ><img src="http://placehold.it/178x40" alt="" /></Link>
                             </div>{/* Logo */}
                             <div className="btn-extars">
-                                <Link to="/apply" className="post-job-btn"><i className="la la-plus" />Post Jobs</Link>
+                                <Link to="/apply" className="post-job-btn"><i className="la la-plus" />Apply Jobs</Link>
                                 <ul className="account-btns">
                                     <li className="signup-popup"><i className="la la-key" /> Sign Up</li>
                                     <li className="signin-popup"><i className="la la-external-link-square" /> Login</li>

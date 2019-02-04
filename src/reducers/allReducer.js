@@ -1,10 +1,11 @@
 import {combineReducers} from 'redux';
 import {AuthReducer, LoginReducer} from './AuthReducer';
-import {SearchReducer, CategoryReducer} from './SearchReducer';
+import {SearchReducer, CategoryReducer, ApplyReducer} from './SearchReducer';
 
 export const allReducer = combineReducers({
     AuthReducer,
     LoginReducer,
     SearchReducer,
-    CategoryReducer
+    CategoryReducer,
+    ApplyReducer
 });

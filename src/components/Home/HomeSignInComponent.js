@@ -32,7 +32,7 @@ class HomeSignInComponent extends Component {
     }
 
     
-    componentDidUpdate() {;
+    componentDidUpdate() {
         if (this.props.data.isAuth) {
             console.log(this.props.data.email);
             console.log(this.props);

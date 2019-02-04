@@ -1,7 +1,7 @@
 import { all } from 'redux-saga/effects';
 import {
     watchFetchLogin, watchHomeSearch,
-    watchListCategory, watchListWorker
+    watchListCategory, watchListWorker, watchWorkerApply
 } from './LoginSaga';
 
 export default function* rootSaga() {
@@ -9,6 +9,7 @@ export default function* rootSaga() {
         watchFetchLogin(),
         watchHomeSearch(),
         watchListCategory(),
-        watchListWorker()
+        watchListWorker(),
+        watchWorkerApply()
     ]);
 }
