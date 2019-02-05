@@ -13,7 +13,7 @@ class CandidateListRow extends Component {
                     <Link to=""><img src="http://placehold.it/80x80" alt="" /></Link>
                 </div>
                 <div className="emply-list-info">
-                    <div className="job-is ft"><Link to="/view-candidate">View Information</Link></div>
+                    <div className="job-is ft"><Link to={`/view-candidate/${ this.props.info.EmployeeId }`}>View Information</Link></div>
                     <h3>{this.Capitalize(this.props.info.FirstName)} {this.Capitalize(this.props.info.LastName)}</h3>
                     <span>{this.Capitalize(this.props.info.CategoryName)}</span>
                     <h6><i className="la la-map-marker" />{this.Capitalize(this.props.info.StateOfOrigin)}</h6>

@@ -23,6 +23,9 @@ class HomeBannerComponent extends Component {
 
     onSubmit(e){
         e.preventDefault();
+        if(this.state.category === "" || this.state.location === ""){
+            return
+        }
         this.props.onHomeSearch({category:this.state.category, location:this.state.location});
         if(this.props.result.length > 0){
             this.props.history.push('/candidate-list');

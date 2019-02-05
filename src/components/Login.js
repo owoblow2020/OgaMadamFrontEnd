@@ -47,7 +47,7 @@ class Login extends Component {
                     btnText: "Login"
                 });
 
-                this.props.history.push('/dashboard');
+                //this.props.history.push('/dashboard');
             } else if (newProps.data1.responseCode !== 200) {
 
                 this.setState({
