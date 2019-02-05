@@ -1,16 +1,15 @@
 import { takeLatest, put } from 'redux-saga/effects';
 import { LOGIN_TASK, HOME_SEARCH_WORKER, HOME_SEARCH_SUCCESS, HOME_LIST_CATEGORY, HOME_LIST_SUCCESS, HOME_LIST_WORKER, WORK_APPLY, WORK_APPLY_FAILED} from '../actions/actonTypes';
 import { Api } from './ApiSaga';
-import { loginActionSuccess} from '../actions';
+import { loginActionSuccess, loginActionFailed} from '../actions';
 
 function* fetchLogin(inputName) {
     try {
         const res = yield Api.getToken(inputName);
         if (res.ResponseCode === 200) {
-            //console.log(res.Data);
-            yield put(loginActionSuccess(res.Data));
+            yield put(loginActionSuccess(res));
         } else {
-
+            yield put(loginActionFailed(res));
         }
 
     } catch (error) {

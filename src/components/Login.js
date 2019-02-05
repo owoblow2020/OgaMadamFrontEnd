@@ -2,20 +2,20 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Footer from './Footer';
-import HomeSignInComponent from './Home/HomeSignInComponent';
 import HomeSignUpComponent from './Home/HomeSignUpComponent';
-import {Link,withRouter} from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import Sample from './Headers/Sample';
 import { loginAuth, authAction } from '../actions';
 
 class Login extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
 
-        this.state={
-            email:"",
-            password:"",
-            btnText:"Login"
+        this.state = {
+            email: "",
+            password: "",
+            status: "",
+            btnText: "Login"
         }
 
         this.onChange = this.onChange.bind(this);
@@ -31,23 +31,55 @@ class Login extends Component {
     onSubmit(e) {
         e.preventDefault();
         this.btn.setAttribute("disabled", "disabled");
-        this.setState({btnText:"Waiting....."});
-        this.props.onLogin({email:this.state.email,password:this.state.password});
+        this.setState({ btnText: "Waiting....." });
+        this.props.onLogin({ email: this.state.email, password: this.state.password });
 
     }
 
-    componentDidUpdate() {
-        if (this.props.data1.isAuth) {
-            this.props.onAuth({isAuth:true});
-            this.props.history.push('/dashboard');
+    componentDidUpdate(prevProps, prevState) {
+
+        const newProps = this.props
+        if (prevProps.data1 !== newProps.data1) {
+            
+            if (newProps.data1.role === 'Employer' && newProps.data1.isAuth === true) {
+                newProps.onAuth({ isAuth: true });
+                this.setState({
+                    btnText: "Login"
+                });
+
+                this.props.history.push('/dashboard');
+            } else if (newProps.data1.responseCode !== 200) {
+
+                this.setState({
+                    status: newProps.data1.message,
+                    btnText: "Login"
+                });
+
+            } else {
+                this.setState({
+                    status: "Not Employers account",
+                    btnText: "Login"
+                });
+            }
         }
+
     }
 
     render() {
         const { from } = this.props.location.state || { from: { pathname: '/' } }
-        if (this.props.data.auth === true) {
+        if (this.props.data.auth === true && this.props.data1.role === 'Employer' && this.props.data1.isAuth === true) {
             return <Redirect to={from} />
         }
+
+        const warning = this.state.status !== "" ?
+
+            <div className="alert alert-danger alert-dismissible fade show" style={{ height: 70, margintop: 50 }} role="alert">
+                <strong>Failed!</strong>   {this.state.status}
+                <button type="button" className="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            : ""
         return (
             <div>
                 <div className="theme-layout" id="scrollup">
@@ -82,6 +114,9 @@ class Login extends Component {
                                     <div className="col-lg-12">
                                         <div className="account-popup-area signin-popup-box static">
                                             <div className="account-popup">
+                                                {
+                                                    warning
+                                                }
                                                 <span>Lorem ipsum dolor sit amet consectetur adipiscing elit odio duis risus at lobortis ullamcorper</span>
                                                 <form onSubmit={this.onSubmit}>
                                                     <div className="cfield">
@@ -113,7 +148,6 @@ class Login extends Component {
                     </section>
                     <Footer />
                 </div>
-                <HomeSignInComponent />
                 <HomeSignUpComponent />
             </div>
         );
@@ -121,10 +155,9 @@ class Login extends Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state.AuthReducer);
     return {
         data: state.LoginReducer,
-        data1:state.AuthReducer
+        data1: state.AuthReducer
     }
 }
 
@@ -134,10 +167,10 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(loginAuth(inputTaskName));
         },
 
-        onAuth: (authInfo) =>{
+        onAuth: (authInfo) => {
             dispatch(authAction(authInfo));
         }
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps )(withRouter(Login));
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Login));

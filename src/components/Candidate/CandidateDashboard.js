@@ -305,7 +305,7 @@ class CandidateDashboard extends Component {
                                         <h3><Link to="">Tix Dog</Link></h3>
                                         <div className="job-lctn">Sacramento, California</div>
                                     </div>
-                                    <Link title className="go-unfollow" to="">Unfollow</Link>
+                                    <Link className="go-unfollow" to="">Unfollow</Link>
                                 </div>{/* Job */}
                             </li>
                             <li>

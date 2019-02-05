@@ -33,11 +33,12 @@ class HomeSignInComponent extends Component {
 
     
     componentDidUpdate() {
-        if (this.props.data.isAuth) {
-            console.log(this.props.data.email);
-            console.log(this.props);
-            this.props.onAuth({isAuth:true});
-            this.props.history.push('/dashboard');
+        const newProps = this.props
+        if (newProps.data1.isAuth) {
+            newProps.onAuth({ isAuth: true });
+            if (newProps.data1.role === 'Employer') {
+                this.props.history.push('/dashboard');
+            }
         }
     }
 
@@ -83,9 +84,10 @@ class HomeSignInComponent extends Component {
 }
 
 const mapStateToProps = state => {
-    console.log(state);
+    //console.log(state);
     return {
-        data:state.AuthReducer
+        data:state.AuthReducer,
+        data1: state.AuthReducer
     }
 }
 

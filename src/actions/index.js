@@ -1,4 +1,4 @@
-import { LOGIN_TASK, LOGIN_SUCCESS, AUTHENTICATION, HOME_SEARCH_WORKER, HOME_LIST_CATEGORY, HOME_LIST_WORKER, WORK_APPLY } from "./actonTypes";
+import { LOGIN_TASK, LOGIN_SUCCESS, AUTHENTICATION, HOME_SEARCH_WORKER, HOME_LIST_CATEGORY, HOME_LIST_WORKER, WORK_APPLY, LOGIN_FAILED } from "./actonTypes";
 
 export const loginAuth = (inputName)=>{
     return{
@@ -12,18 +12,35 @@ export const loginActionSuccess = (tokenParam)=>{
     return {
         type:LOGIN_SUCCESS,
         isAuth: true,
-        address: tokenParam.Address,
-        bvn: tokenParam.BVN,
-        dateofbirth: tokenParam.DateOfBirth,
-        email: tokenParam.Email,
-        firstname: tokenParam.FirstName,
-        lastname: tokenParam.LastName,
-        middlename: tokenParam.MiddleName,
-        NIMC: tokenParam.NIMC,
-        phonenumber: tokenParam.PhoneNumber,
-        placeofbirth: tokenParam.PlaceOfBirth,
-        sex: tokenParam.Sex,
-        stateofOrigin: tokenParam.StateOfOrigin
+        address: tokenParam.Data.Address,
+        bvn: tokenParam.Data.BVN,
+        dateofbirth: tokenParam.Data.DateOfBirth,
+        email: tokenParam.Data.Email,
+        firstname: tokenParam.Data.FirstName,
+        lastname: tokenParam.Data.LastName,
+        middlename: tokenParam.Data.MiddleName,
+        NIMC: tokenParam.Data.NIMC,
+        phonenumber: tokenParam.Data.PhoneNumber,
+        placeofbirth: tokenParam.Data.PlaceOfBirth,
+        sex: tokenParam.Data.Sex,
+        stateofOrigin: tokenParam.Data.StateOfOrigin,
+        role:tokenParam.Data.Role,
+        placeOfWork:tokenParam.Data.PlaceOfWork,
+        nextOfKin:tokenParam.Data.NextOfKin,
+        nextOfKinPhoneNumber:tokenParam.Data.NextOfKinPhoneNumber,
+        nextOfKinAddress:tokenParam.Data.NextOfKinAddress,
+        profession:tokenParam.Data.Profession,
+        responseCode:tokenParam.ResponseCode,
+        message:tokenParam.Message
+    }
+}
+
+export const loginActionFailed = (tokenParam) =>{
+    return {
+        type: LOGIN_FAILED,
+        responseCode:tokenParam.ResponseCode,
+        message:tokenParam.Message
+
     }
 }
 

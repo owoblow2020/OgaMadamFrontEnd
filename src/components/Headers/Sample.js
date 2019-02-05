@@ -1,9 +1,60 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { loginAuth, authAction } from '../../actions';
 
 class Sample extends Component {
-    state = {}
+    constructor(props) {
+        super(props);
+        this.state = {
+            login: false
+        }
+
+        this.onClick = this.onClick.bind(this);
+    }
+
+    componentWillMount() {
+        if (this.props.data.auth) {
+            this.setState({
+                login: true
+            });
+        }        
+    }
+
+    onClick(e){
+        e.preventDefault();
+        this.props.onAuth({ isAuth: false });
+        
+
+    }
+    
+    Capitalize(str) {
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
     render() {
+        const dashboardBtn = this.state.login ?
+            <li className="menu-item-has-children">
+                <Link to="/dashboard" >Dashboard</Link>
+            </li> : ""
+
+        const logoutBtn = this.state.login ?
+
+            <div className="btn-extars">
+                <ul className="account-btns">
+                    <li className="signup-popup"><i className="la la-key" /> {this.Capitalize(this.props.data1.firstname)} {this.Capitalize(this.props.data1.lastname)}</li>
+                    <li className="signin-popup" onClick={this.onClick}><Link to="" onClick={this.onClick}><i className="la la-external-link-square" /> Logout</Link></li>
+                </ul>
+            </div>
+            :
+            <div className="btn-extars">
+                <Link to="/apply" className="post-job-btn"><i className="la la-plus" />Apply Jobs</Link>
+                <ul className="account-btns">
+                    <li className="signup-popup"><i className="la la-key" /> Sign Up</li>
+                    <li className="signin-popup"><Link to="/login" ><i className="la la-external-link-square" /> Login</Link></li>
+                </ul>
+            </div>
+
         return (
             <div>
                 <div className="responsive-header">
@@ -19,17 +70,11 @@ class Sample extends Component {
                         </div>
                     </div>
                     <div className="responsive-opensec">
-                        <div className="btn-extars">
-                            <Link to="/apply" className="post-job-btn" ><i className="la la-plus" />Apply Jobs</Link>
-                            <ul className="account-btns">
-                                <li className="signup-popup"><Link to=""><i className="la la-key" /> Sign Up</Link></li>
-                                <li className="signin-popup"><Link to=""><i className="la la-external-link-square" /> Login</Link></li>
-                            </ul>
-                        </div>{/* Btn Extras */}
-                        <form className="res-search">
+                    {logoutBtn}
+                        {/* <form className="res-search">
                             <input type="text" placeholder="Job title, keywords or company name" />
                             <button type="submit"><i className="la la-search" /></button>
-                        </form>
+                        </form> */}
                         <div className="responsivemenu">
                             <ul>
                                 <li className="menu-item-has-children">
@@ -41,9 +86,7 @@ class Sample extends Component {
                                 <li className="menu-item-has-children">
                                     <Link to="/contact" >Contact Us</Link>
                                 </li>
-                                <li className="menu-item-has-children">
-                                    <Link to="/" ></Link>
-                                </li>
+                                {dashboardBtn}
                             </ul>
                         </div>
                     </div>
@@ -54,13 +97,7 @@ class Sample extends Component {
                             <div className="logo">
                                 <Link to="/" ><img src="http://placehold.it/178x40" alt="" /></Link>
                             </div>{/* Logo */}
-                            <div className="btn-extars">
-                                <Link to="/apply" className="post-job-btn"><i className="la la-plus" />Apply Jobs</Link>
-                                <ul className="account-btns">
-                                    <li className="signup-popup"><i className="la la-key" /> Sign Up</li>
-                                    <li className="signin-popup"><i className="la la-external-link-square" /> Login</li>
-                                </ul>
-                            </div>{/* Btn Extras */}
+                            {logoutBtn}
                             <nav>
                                 <ul>
                                     <li className="menu-item-has-children">
@@ -72,9 +109,7 @@ class Sample extends Component {
                                     <li className="menu-item-has-children">
                                         <Link to="/contact" >Contact Us</Link>
                                     </li>
-                                    <li >
-                                        <Link to="/" ></Link>
-                                    </li>
+                                    {dashboardBtn}
 
                                 </ul>
                             </nav>{/* Menus */}
@@ -87,4 +122,24 @@ class Sample extends Component {
     }
 }
 
-export default Sample;
+const mapStateToProps = (state) => {
+    console.log(state.AuthReducer);
+    return {
+        data: state.LoginReducer,
+        data1: state.AuthReducer
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onLogin: (inputTaskName) => {
+            dispatch(loginAuth(inputTaskName));
+        },
+
+        onAuth: (authInfo) => {
+            dispatch(authAction(authInfo));
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Sample);
