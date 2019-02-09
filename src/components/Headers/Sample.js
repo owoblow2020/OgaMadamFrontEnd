@@ -123,7 +123,6 @@ class Sample extends Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state.AuthReducer);
     return {
         data: state.LoginReducer,
         data1: state.AuthReducer

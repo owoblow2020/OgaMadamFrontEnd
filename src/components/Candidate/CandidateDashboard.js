@@ -2,9 +2,40 @@ import React, { Component } from 'react';
 import Footer from '../Footer';
 import {Link} from 'react-router-dom';
 import Sample from '../Headers/Sample';
+import {connect} from 'react-redux';
+import { fetchTransAction, employeeByEmployer, ticketByUserAction, notificationByUser } from '../../actions';
 
 class CandidateDashboard extends Component {
-    state = {}
+    constructor(props){
+        super(props);
+        this.state = {
+            noOfTrans:0,
+            noOfEmployee:0,
+            noOfTicket:0,
+            noOfNotifcation:0
+        }
+    }
+    
+    componentWillMount() {
+        if(this.props.details){
+            this.props.onFetchTrans(this.props.details.id);
+            this.props.onEmployee(this.props.details.id);
+            this.props.onTicket(this.props.details.id);
+            this.props.onNotification(this.props.details.id);
+        }
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        const newProps = this.props
+        if (prevProps.trans !== newProps.trans) {    
+            this.setState({
+                noOfTrans:newProps.trans.length,
+                noOfEmployee:newProps.employee.length,
+                noOfTicket:newProps.ticket.length,
+                noOfNotifcation:newProps.notification.length
+            })
+        }
+    }
     render() {
         return (
             <div>
@@ -19,20 +50,8 @@ class CandidateDashboard extends Component {
                                             <div className="tree_widget-sec">
                                                 <ul>
                                                     <li className="inner-child">
-                                                        <Link to=""><i className="la la-file-text" />Company Profile</Link>
-                                                        <ul>
-                                                            <ol><Link to="">My Profile</Link></ol>
-                                                            <ol><Link to="">Social Network</Link></ol>
-                                                            <ol><Link to="">Contact Information</Link></ol>
-                                                        </ul>
-                                                    </li>
-                                                    <li className="inner-child">
-                                                        <Link to=""><i className="la la-briefcase" />Manage Jobs</Link>
-                                                        <ul>
-                                                            <li><Link to="">My Profile</Link></li>
-                                                            <li><Link to="">Social Network</Link></li>
-                                                            <li><Link to="">Contact Information</Link></li>
-                                                        </ul>
+                                                        <Link to="/dashboard"><i className="la la-file-text" />Dashboard</Link>
+                                                      
                                                     </li>
                                                     <li className="inner-child">
                                                         <Link to=""><i className="la la-money" />Transactions</Link>
@@ -42,46 +61,31 @@ class CandidateDashboard extends Component {
                                                             <li><Link to="">Contact Information</Link></li>
                                                         </ul>
                                                     </li>
+                                                    
                                                     <li className="inner-child">
-                                                        <Link to=""><i className="la la-paper-plane" />Resumes</Link>
-                                                        <ul>
-                                                            <li><Link to="">My Profile</Link></li>
-                                                            <li><Link to="">Social Network</Link></li>
-                                                            <li><Link to="">Contact Information</Link></li>
-                                                        </ul>
+                                                        <Link to=""><i className="la la-lock" />View Employers</Link>
+                                                
                                                     </li>
                                                     <li className="inner-child">
-                                                        <Link to=""><i className="la la-user" />Packages</Link>
-                                                        <ul>
-                                                            <li><Link to="">My Profile</Link></li>
-                                                            <li><Link to="">Social Network</Link></li>
-                                                            <li><Link to="">Contact Information</Link></li>
-                                                        </ul>
+                                                        <Link to=""><i className="la la-paper-plane" />Reviews</Link>
+                         
                                                     </li>
                                                     <li className="inner-child">
-                                                        <Link to=""><i className="la la-file-text" />Post a New Job</Link>
-                                                        <ul>
-                                                            <li><Link to="">My Profile</Link></li>
-                                                            <li><Link to="">Social Network</Link></li>
-                                                            <li><Link to="">Contact Information</Link></li>
-                                                        </ul>
+                                                        <Link to=""><i className="la la-user" />Tickets</Link>
+                                                
                                                     </li>
                                                     <li className="inner-child">
-                                                        <Link to=""><i className="la la-flash" />Job Alerts</Link>
-                                                        <ul>
-                                                            <li><Link to="">My Profile</Link></li>
-                                                            <li><Link to="">Social Network</Link></li>
-                                                            <li><Link to="">Contact Information</Link></li>
-                                                        </ul>
+                                                        <Link to=""><i className="la la-file-text" />Notifications</Link>
+                      
                                                     </li>
                                                     <li className="inner-child">
-                                                        <Link to=""><i className="la la-lock" />Change Password</Link>
+                                                        <Link to=""><i className="la la-flash" />Profile Managment</Link>
                                                         <ul>
-                                                            <li><Link to="">My Profile</Link></li>
-                                                            <li><Link to="">Social Network</Link></li>
-                                                            <li><Link to="">Contact Information</Link></li>
+                                                            <li><Link to="">Change Password</Link></li>
+                                                            <li><Link to="">Edit Personal Information</Link></li>
                                                         </ul>
                                                     </li>
+
                                                     <li><Link to=""><i className="la la-unlink" />Logout</Link></li>
                                                 </ul>
                                             </div>
@@ -95,15 +99,15 @@ class CandidateDashboard extends Component {
                                     <div className="col-lg-9 column">
                                         <div className="padding-left">
                                             <div className="manage-jobs-sec">
-                                                <h3>Candidates Dashboard</h3>
+                                                <h3>Employer's Dashboard</h3>
                                                 <div className="cat-sec">
                                                     <div className="row no-gape">
                                                         <div className="col-lg-4 col-md-4 col-sm-12">
                                                             <div className="p-category">
                                                             <Link to="">
                                                                     <i className="la la-briefcase" />
-                                                                    <span>Applied Job</span>
-                                                                    <p>14 Applications</p>
+                                                                    <span>Transactions</span>
+                                                                    <p>{this.state.noOfTrans} Transactions</p>
                                                                </Link>
                                                             </div>
                                                         </div>
@@ -111,8 +115,8 @@ class CandidateDashboard extends Component {
                                                             <div className="p-category view-resume-list">
                                                                 <Link to="">
                                                                     <i className="la la-eye" />
-                                                                    <span>View Resume</span>
-                                                                    <p>22 View Statistic</p>
+                                                                    <span>View Employer's</span>
+                                                                    <p>{this.state.noOfEmployee} Employer's</p>
                                                                 </Link>
                                                             </div>
                                                         </div>
@@ -120,8 +124,8 @@ class CandidateDashboard extends Component {
                                                             <div className="p-category">
                                                                 <Link to="">
                                                                     <i className="la la-file-text " />
-                                                                    <span>My Resume</span>
-                                                                    <p>Create New Resume</p>
+                                                                    <span>Tickets</span>
+                                                                    <p>{this.state.noOfTicket} Tickets</p>
                                                                 </Link>
                                                             </div>
                                                         </div>
@@ -133,8 +137,8 @@ class CandidateDashboard extends Component {
                                                             <div className="p-category">
                                                                 <Link to="">
                                                                     <i className="la la-check" />
-                                                                    <span>Appropriate For Me</span>
-                                                                    <p>(05 Jobs)</p>
+                                                                    <span>Notifications</span>
+                                                                    <p>({this.state.noOfNotifcation} Notifications)</p>
                                                                 </Link>
                                                             </div>
                                                         </div>
@@ -142,8 +146,8 @@ class CandidateDashboard extends Component {
                                                             <div className="p-category follow-companies-popup">
                                                                 <Link to="">
                                                                     <i className="la la-user" />
-                                                                    <span>Follow Companies</span>
-                                                                    <p>56 Companies</p>
+                                                                    <span>Edit Profile</span>
+                                                                    <p>Personal Information</p>
                                                                 </Link>
                                                             </div>
                                                         </div>
@@ -151,8 +155,8 @@ class CandidateDashboard extends Component {
                                                             <div className="p-category">
                                                                 <Link to="">
                                                                     <i className="la la-file" />
-                                                                    <span>My Profile</span>
-                                                                    <p>View Profile</p>
+                                                                    <span>Change Password</span>
+                                                                    <p>Edit Password</p>
                                                                 </Link>
                                                             </div>
                                                         </div>
@@ -167,193 +171,37 @@ class CandidateDashboard extends Component {
                     </section>
                     <Footer />
                 </div>
-                <div className="profile-sidebar">
-                    <span className="close-profile"><i className="la la-close" /></span>
-                    <div className="can-detail-s">
-                        <div className="cst"><img src="http://placehold.it/145x145" alt="" /></div>
-                        <h3>David CARLOS</h3>
-                        <span><i>UX / UI Designer</i> at Atract Solutions</span>
-                        <p>creativelayers088@gmail.com</p>
-                        <p>Member Since, 2017</p>
-                        <p><i className="la la-map-marker" />Istanbul / Turkey</p>
-                    </div>
-                    <div className="tree_widget-sec">
-                        <ul>
-                            <li className="inner-child active">
-                                <Link to=""><i className="la la-file-text" />My Profile</Link>
-                                <ul style={{ display: 'block' }}>
-                                    <li><Link to="">My Profile</Link></li>
-                                    <li><Link to="">Social Network</Link></li>
-                                    <li><Link to="">Contact Information</Link></li>
-                                </ul>
-                            </li>
-                            <li className="inner-child">
-                                <Link to=""><i className="la la-briefcase" />My Resume</Link>
-                                <ul>
-                                    <li><Link to="">Education</Link></li>
-                                    <li><Link to="">Work Experience</Link></li>
-                                    <li><Link to="">Portfolio</Link></li>
-                                    <li><Link to="">Professional Skills</Link></li>
-                                    <li><Link to="">Awards</Link></li>
-                                </ul>
-                            </li>
-                            <li className="inner-child">
-                                <Link to=""><i className="la la-money" />Shorlisted Job</Link>
-                                <ul>
-                                    <li><Link to="">My Profile</Link></li>
-                                    <li><Link to="">Social Network</Link></li>
-                                    <li><Link to="">Contact Information</Link></li>
-                                </ul>
-                            </li>
-                            <li className="inner-child">
-                                <Link to=""><i className="la la-paper-plane" />Applied Job</Link>
-                                <ul>
-                                    <li><Link to="">My Profile</Link></li>
-                                    <li><Link to="">Social Network</Link></li>
-                                    <li><Link to="">Contact Information</Link></li>
-                                </ul>
-                            </li>
-                            <li className="inner-child">
-                                <Link to=""><i className="la la-user" />Job Alerts</Link>
-                                <ul>
-                                    <li><Link to="">My Profile</Link></li>
-                                    <li><Link to="">Social Network</Link></li>
-                                    <li><Link to="">Contact Information</Link></li>
-                                </ul>
-                            </li>
-                            <li className="inner-child">
-                                <Link to=""><i className="la la-file-text" />Cv &amp; Cover Letter</Link>
-                                <ul>
-                                    <li><Link to="">My Profile</Link></li>
-                                    <li><Link to="">Social Network</Link></li>
-                                    <li><Link to="">Contact Information</Link></li>
-                                </ul>
-                            </li>
-                            <li className="inner-child">
-                                <Link to=""><i className="la la-flash" />Change Password</Link>
-                                <ul>
-                                    <li><Link to="">My Profile</Link></li>
-                                    <li><Link to="">Social Network</Link></li>
-                                    <li><Link to="">Contact Information</Link></li>
-                                </ul>
-                            </li>
-                            <li><Link to=""><i className="la la-unlink" />Logout</Link></li>
-                        </ul>
-                    </div>
-                </div>{/* Profile Sidebar */}
-                <div className="view-resumesec">
-                    <div className="view-resumes">
-                        <span className="close-resume-popup"><i className="la la-close" /></span>
-                        <h3>13 Times Viewed By 8 Companies.</h3>
-                        <div className="job-listing wtabs">
-                            <div className="job-title-sec">
-                                <div className="c-logo"> <img src="http://placehold.it/98x51" alt="" /> </div>
-                                <h3><Link to="">Web Designer / Developer</Link></h3>
-                                <span>Massimo Artemisis</span>
-                                <div className="job-lctn">Sacramento, California</div>
-                            </div>
-                            <span className="date-resume">11.02.2017</span>
-                        </div>{/* Job */}
-                        <div className="job-listing wtabs">
-                            <div className="job-title-sec">
-                                <div className="c-logo"> <img src="http://placehold.it/98x51" alt="" /> </div>
-                                <h3><Link to="">C Developer (Senior) C .Net</Link></h3>
-                                <span>Massimo Artemisis</span>
-                                <div className="job-lctn"><i className="la la-map-marker" />Sacramento, California</div>
-                            </div>
-                            <span className="date-resume">11.02.2017</span>
-                        </div>{/* Job */}
-                        <div className="job-listing wtabs">
-                            <div className="job-title-sec">
-                                <div className="c-logo"> <img src="http://placehold.it/98x51" alt="" /> </div>
-                                <h3><Link to="">Web Designer / Developer</Link></h3>
-                                <span>Massimo Artemisis</span>
-                                <div className="job-lctn">Sacramento, California</div>
-                            </div>
-                            <span className="date-resume">11.02.2017</span>
-                        </div>{/* Job */}
-                        <div className="job-listing wtabs">
-                            <div className="job-title-sec">
-                                <div className="c-logo"> <img src="http://placehold.it/98x51" alt="" /> </div>
-                                <h3><Link to="">Web Designer / Developer</Link></h3>
-                                <span>Massimo Artemisis</span>
-                                <div className="job-lctn">Sacramento, California</div>
-                            </div>
-                            <span className="date-resume">11.02.2017</span>
-                        </div>{/* Job */}
-                    </div>
-                </div>
-                <div className="follow-companiesec">
-                    <div className="follow-companies">
-                        <span className="close-follow-company"><i className="la la-close" /></span>
-                        <h3>Follow Companies.</h3>
-                        <ul id="scrollbar">
-                            <li>
-                                <div className="job-listing wtabs">
-                                    <div className="job-title-sec">
-                                        <div className="c-logo"> <img src="http://placehold.it/98x51" alt="" /> </div>
-                                        <h3><Link to="">Web Designer / Developer</Link></h3>
-                                        <div className="job-lctn">Sacramento, California</div>
-                                    </div>
-                                    <Link to="" className="go-unfollow">Unfollow</Link>
-                                </div>{/* Job */}
-                            </li>
-                            <li>
-                                <div className="job-listing wtabs">
-                                    <div className="job-title-sec">
-                                        <div className="c-logo"> <img src="http://placehold.it/98x51" alt="" /> </div>
-                                        <h3><Link to="">Tix Dog</Link></h3>
-                                        <div className="job-lctn">Sacramento, California</div>
-                                    </div>
-                                    <Link className="go-unfollow" to="">Unfollow</Link>
-                                </div>{/* Job */}
-                            </li>
-                            <li>
-                                <div className="job-listing wtabs">
-                                    <div className="job-title-sec">
-                                        <div className="c-logo"> <img src="http://placehold.it/98x51" alt="" /> </div>
-                                        <h3><Link to="">StarHealth</Link></h3>
-                                        <div className="job-lctn">Sacramento, California</div>
-                                    </div>
-                                    <Link to="" className="go-unfollow">Unfollow</Link>
-                                </div>{/* Job */}
-                            </li>
-                            <li>
-                                <div className="job-listing wtabs">
-                                    <div className="job-title-sec">
-                                        <div className="c-logo"> <img src="http://placehold.it/98x51" alt="" /> </div>
-                                        <h3><Link to="">Altes Bank</Link></h3>
-                                        <div className="job-lctn">Sacramento, California</div>
-                                    </div>
-                                    <Link to="" className="go-unfollow">Unfollow</Link>
-                                </div>{/* Job */}
-                            </li>
-                            <li>
-                                <div className="job-listing wtabs">
-                                    <div className="job-title-sec">
-                                        <div className="c-logo"> <img src="http://placehold.it/98x51" alt="" /> </div>
-                                        <h3><Link to="">StarHealth</Link></h3>
-                                        <div className="job-lctn">Sacramento, California</div>
-                                    </div>
-                                    <Link to="" className="go-unfollow">Unfollow</Link>
-                                </div>{/* Job */}
-                            </li>
-                            <li>
-                                <div className="job-listing wtabs">
-                                    <div className="job-title-sec">
-                                        <div className="c-logo"> <img src="http://placehold.it/98x51" alt="" /> </div>
-                                        <h3><Link to="">Altes Bank</Link></h3>
-                                        <div className="job-lctn">Sacramento, California</div>
-                                    </div>
-                                    <Link to="" className="go-unfollow">Unfollow</Link>
-                                </div>{/* Job */}
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+
             </div>
         );
     }
 }
 
-export default CandidateDashboard;
+const mapStateToProps = (state) =>{
+    return {
+        details: state.AuthReducer,
+        trans: state.TransReducer.trans,
+        employee: state.EmployeeByEmployerReducer,
+        ticket:state.TicketByUser,
+        notification:state.NotificationByUser
+    }
+}
+
+const mapDispatchToProps = (dispatch) =>{
+    return {
+        onFetchTrans: (employerId) =>{
+            dispatch(fetchTransAction(employerId));
+        },
+        onEmployee:(employerId) =>{
+            dispatch(employeeByEmployer(employerId));
+        },
+        onTicket: (userId) =>{
+            dispatch(ticketByUserAction(userId));
+        },
+        onNotification: (userId) => {
+            dispatch(notificationByUser(userId));
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CandidateDashboard);

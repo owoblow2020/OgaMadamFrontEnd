@@ -1,5 +1,5 @@
 import { takeLatest, put } from 'redux-saga/effects';
-import { LOGIN_TASK, HOME_SEARCH_WORKER, HOME_SEARCH_SUCCESS, HOME_LIST_CATEGORY, HOME_LIST_SUCCESS, HOME_LIST_WORKER, WORK_APPLY, WORK_APPLY_FAILED} from '../actions/actonTypes';
+import { LOGIN_TASK, HOME_SEARCH_WORKER, HOME_SEARCH_SUCCESS, HOME_LIST_CATEGORY, HOME_LIST_SUCCESS, HOME_LIST_WORKER, WORK_APPLY, WORK_APPLY_FAILED, FETCH_TRANSACTION, FETCH_TRANSACTION_SUCCESS, EMPLOYEE_BY_EMPLOYER, EMPLOYEE_BY_EMPLOYER_SUCCESS, TICKET_BY_USER, TICKET_BY_USER_SUCCESS, NOTIFICATION_BY_USER, NOTIFICATION_BY_USER_SUCCESS} from '../actions/actonTypes';
 import { Api } from './ApiSaga';
 import { loginActionSuccess, loginActionFailed} from '../actions';
 
@@ -82,4 +82,72 @@ function* workApplyAction(param){
 
 export function* watchWorkerApply(){
     yield takeLatest(WORK_APPLY, workApplyAction);
+}
+
+function* getTrans(employerId){
+    try{
+        const trans = yield Api.getTransaction(employerId);
+        if(trans.ResponseCode === 200){
+            yield put({type:FETCH_TRANSACTION_SUCCESS, trans:trans.Data});
+         }else{
+             //yield put({type:WORK_APPLY_FAILED, param:apply})
+         }
+    }catch(err){
+        console.log(err);
+    }
+}
+
+export function* watchFetchTrans(){
+    yield takeLatest(FETCH_TRANSACTION, getTrans);
+}
+
+function* employeeByEmployer(employerId){
+    try{
+        const employee = yield Api.getEmployeeByEmployer(employerId);
+        if(employee.ResponseCode === 200){
+            yield put({type:EMPLOYEE_BY_EMPLOYER_SUCCESS, trans:employee});
+         }else{
+             //yield put({type:WORK_APPLY_FAILED, param:apply})
+         }
+    }catch(err){
+        console.log(err);
+    }
+}
+
+export function* watchEmployeeByEmployer(){
+    yield takeLatest(EMPLOYEE_BY_EMPLOYER, employeeByEmployer);
+}
+
+function* ticketUser(userId){
+    try{
+        const ticket = yield Api.getTicket(userId);
+        if(ticket.ResponseCode === 200){
+            yield put({type:TICKET_BY_USER_SUCCESS, trans:ticket});
+         }else{
+             //yield put({type:WORK_APPLY_FAILED, param:apply})
+         }
+    }catch(err){
+        console.log(err);
+    }
+}
+
+export function* watchTicket(){
+    yield takeLatest(TICKET_BY_USER, ticketUser);
+}
+
+function* notification(userId){
+    try{
+        const ticket = yield Api.getNotification(userId);
+        if(ticket.ResponseCode === 200){
+            yield put({type:NOTIFICATION_BY_USER_SUCCESS, trans:ticket});
+         }else{
+             //yield put({type:WORK_APPLY_FAILED, param:apply})
+         }
+    }catch(err){
+        console.log(err);
+    }
+}
+
+export function* watchNotification(){
+    yield takeLatest(NOTIFICATION_BY_USER, notification)
 }

@@ -287,7 +287,6 @@ const requiredFileds = {
 }
 
 const mapStateToProps = (state) => {
-    //console.log(state.ApplyReducer.param);
     return {
         catParam: state.CategoryReducer.cat,
         param: state.ApplyReducer.param

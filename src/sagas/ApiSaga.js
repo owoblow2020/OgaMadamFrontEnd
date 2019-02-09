@@ -1,5 +1,5 @@
 import {
-    EMPLOYEE_LOGIN_API, LOCAL_AUTHORIZATION, HOME_SEARCH_API, LIST_CATEGORY_API, HOME_SIX_WORKER, REGISTER_EMPLOYEE
+    EMPLOYEE_LOGIN_API, LOCAL_AUTHORIZATION, HOME_SEARCH_API, LIST_CATEGORY_API, HOME_SIX_WORKER, REGISTER_EMPLOYEE, TRANSACTION_BY_EMPLOYER, EMPLOYEE_BY_EMPLOYER_API, TICKET_API, NOTIFICATION_API
 } from './Utility';
 
 function* getToken(inputName) {
@@ -108,10 +108,90 @@ function* postWorkerApply(param) {
 
 }
 
+function* getTransaction(employerId){
+    return yield fetch(TRANSACTION_BY_EMPLOYER, {
+        method: "POST",
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+            Authorization: LOCAL_AUTHORIZATION
+        },
+        body: JSON.stringify({
+            "EmployerId": employerId.employerId
+        })
+    }).then((response) => response.json())
+        .then((responseJson) => {
+            return responseJson;
+        }).catch(function (err) {
+            console.log(err);
+        });
+}
+
+function* getEmployeeByEmployer(employerId){
+    return yield fetch(EMPLOYEE_BY_EMPLOYER_API, {
+        method: "POST",
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+            Authorization: LOCAL_AUTHORIZATION
+        },
+        body: JSON.stringify({
+            "EmployerId": employerId.employerId
+        })
+    }).then((response) => response.json())
+        .then((responseJson) => {
+            return responseJson;
+        }).catch(function (err) {
+            console.log(err);
+        });
+}
+
+function* getTicket(userId){
+    return yield fetch(TICKET_API, {
+        method: "POST",
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+            Authorization: LOCAL_AUTHORIZATION
+        },
+        body: JSON.stringify({
+            "EmployerId":userId.userId
+        })
+    }).then((response) => response.json())
+        .then((responseJson) => {
+            return responseJson;
+        }).catch(function (err) {
+            console.log(err);
+        });
+}
+
+function* getNotification(userId){    
+    return yield fetch(NOTIFICATION_API, {
+        method: "POST",
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+            Authorization: LOCAL_AUTHORIZATION
+        },
+        body: JSON.stringify({
+            "EmployerId":userId.userId
+        })
+    }).then((response) => response.json())
+        .then((responseJson) => {
+            return responseJson;
+        }).catch(function (err) {
+            console.log(err);
+        });
+}
+
 export const Api = {
     getToken,
     getHomeSearch,
     getCategory,
     getListWorker,
-    postWorkerApply
+    postWorkerApply,
+    getTransaction,
+    getEmployeeByEmployer,
+    getTicket,
+    getNotification
 }

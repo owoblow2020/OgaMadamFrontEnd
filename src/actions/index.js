@@ -1,4 +1,4 @@
-import { LOGIN_TASK, LOGIN_SUCCESS, AUTHENTICATION, HOME_SEARCH_WORKER, HOME_LIST_CATEGORY, HOME_LIST_WORKER, WORK_APPLY, LOGIN_FAILED } from "./actonTypes";
+import { LOGIN_TASK, LOGIN_SUCCESS, AUTHENTICATION, HOME_SEARCH_WORKER, HOME_LIST_CATEGORY, HOME_LIST_WORKER, WORK_APPLY, LOGIN_FAILED, FETCH_TRANSACTION, EMPLOYEE_BY_EMPLOYER, TICKET_BY_USER, NOTIFICATION_BY_USER } from "./actonTypes";
 
 export const loginAuth = (inputName)=>{
     return{
@@ -31,7 +31,8 @@ export const loginActionSuccess = (tokenParam)=>{
         nextOfKinAddress:tokenParam.Data.NextOfKinAddress,
         profession:tokenParam.Data.Profession,
         responseCode:tokenParam.ResponseCode,
-        message:tokenParam.Message
+        message:tokenParam.Message,
+        id:tokenParam.Data.Id
     }
 }
 
@@ -75,5 +76,33 @@ export const workApply = (workParam) =>{
     return {
         type:WORK_APPLY,
         workParam
+    }
+}
+
+export const fetchTransAction = (employerId) =>{
+    return {
+        type: FETCH_TRANSACTION,
+        employerId
+    }
+}
+
+export const employeeByEmployer = (employerId) =>{
+    return{
+        type: EMPLOYEE_BY_EMPLOYER,
+        employerId
+    }
+}
+
+export const ticketByUserAction = (userId) =>{
+    return {
+        type:TICKET_BY_USER,
+        userId
+    }
+}
+
+export const notificationByUser = (userId) =>{
+    return{
+        type:NOTIFICATION_BY_USER,
+        userId
     }
 }
