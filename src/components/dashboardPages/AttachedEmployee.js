@@ -3,21 +3,20 @@ import Sample from '../Headers/Sample';
 import MenuDashboard from './MenuDashboard';
 import Footer from '../Footer';
 import { connect } from 'react-redux';
+import { employeeByEmployer } from '../../actions';
 
-import { fetchTransAction } from '../../actions';
-
-class Transaction extends Component {
+class AttachedEmployee extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            transactions: []
+            notifications: []
         }
     }
 
     componentWillMount() {
         if (this.props.details) {
-            this.setState({ transactions: this.props.trans });
-            this.props.onFetchTrans(this.props.details.id);
+            this.setState({ notifications: this.props.employee });
+            this.props.onEmployee(this.props.details.id);
         }
     }
 
@@ -25,27 +24,26 @@ class Transaction extends Component {
         return str.charAt(0).toUpperCase() + str.slice(1);
     }
 
+
     render() {
-        const tran = this.state.transactions === [] ? <tr><td>No Transaction</td></tr>
+
+        const tran = this.state.notifications === [] ? <tr><td>No Notification</td></tr>
             :
-            this.props.trans.map(item =>
-                <tr key={item.TransactionId}>
-                    <td>
-                        <span>{item.TransactionId}</span>
-                    </td>
+            this.props.employee.map(item =>
+                <tr key={item.Id}>
                     <td>
                         <div className="table-list-title">
-                            <h3>{this.Capitalize(item.EmployeeId)}</h3>
+                            <h3>{this.Capitalize(item.FirstName)} {this.Capitalize(item.LastName)}</h3>
                         </div>
                     </td>
                     <td>
-                        <span>{this.Capitalize(item.PaymentCategory)}</span>
+                        <span>{item.AttachedDate}</span>
                     </td>
                     <td>
-                        <span>{item.TransactionDate}</span>
+                        <span>{item.Sex}</span>
                     </td>
                     <td>
-                        <span>{this.Capitalize(item.PaymentChannel)}</span>
+                        <span>{item.PhoneNumber}</span>
                     </td>
                     <td>
                         <span className="status active">{new Intl.NumberFormat('en-GB', {
@@ -53,10 +51,10 @@ class Transaction extends Component {
                             currency: 'NGN',
                             minimumFractionDigits: 0,
                             maximumFractionDigits: 0
-                        }).format(item.Amount)}</span>
+                        }).format(item.SalaryAmount)}</span>
                     </td>
                     <td>
-                        <span className="table-list-title"><h3>{this.Capitalize(item.PaymentStatus)}</h3></span>
+                        <span className="table-list-title"><h3>{this.Capitalize(item.StateOfOrigin)}</h3></span>
                     </td>
                 </tr>
             )
@@ -77,13 +75,12 @@ class Transaction extends Component {
                                                 <table>
                                                     <thead>
                                                         <tr>
-                                                            <td>Transaction ID</td>
-                                                            <td>Employee's Name</td>
-                                                            <td>Title</td>
-                                                            <td>Payment Date</td>
-                                                            <td>Payment Type</td>
-                                                            <td>Amount</td>
-                                                            <td>Status</td>
+                                                            <td>Employee Name</td>
+                                                            <td>Employment Date</td>
+                                                            <td>Sex</td>
+                                                            <td>Phone Number</td>
+                                                            <td>Salary Amount</td>
+                                                            <td>State Of Origin</td>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -107,20 +104,19 @@ class Transaction extends Component {
     }
 }
 
-
 const mapStateToProps = (state) => {
     return {
         details: state.AuthReducer,
-        trans: state.TransReducer.trans
+        employee: state.EmployeeByEmployerReducer.trans
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onFetchTrans: (employerId) => {
-            dispatch(fetchTransAction(employerId));
+        onEmployee: (employerId) => {
+            dispatch(employeeByEmployer(employerId));
         }
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Transaction);
+export default connect(mapStateToProps, mapDispatchToProps)(AttachedEmployee);

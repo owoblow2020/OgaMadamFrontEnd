@@ -132,7 +132,7 @@ const mapStateToProps = (state) =>{
     return {
         details: state.AuthReducer,
         trans: state.TransReducer.trans,
-        employee: state.EmployeeByEmployerReducer,
+        employee: state.EmployeeByEmployerReducer.trans,
         ticket:state.TicketByUser,
         notification:state.NotificationByUser
     }

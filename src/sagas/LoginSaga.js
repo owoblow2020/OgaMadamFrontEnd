@@ -105,7 +105,7 @@ function* employeeByEmployer(employerId){
     try{
         const employee = yield Api.getEmployeeByEmployer(employerId);
         if(employee.ResponseCode === 200){
-            yield put({type:EMPLOYEE_BY_EMPLOYER_SUCCESS, trans:employee});
+            yield put({type:EMPLOYEE_BY_EMPLOYER_SUCCESS, trans:employee.Data});
          }else{
              //yield put({type:WORK_APPLY_FAILED, param:apply})
          }

@@ -12,6 +12,7 @@ import ErrorComponent from '../components/ErrorComponent';
 import Login from '../components/Login';
 import PrivateRoute from './PrivateRoute';
 import Transaction from '../components/dashboardPages/Transaction';
+import AttachedEmployee from '../components/dashboardPages/AttachedEmployee';
 
 class RouteComponent extends Component {
     state = {}
@@ -33,6 +34,7 @@ class RouteComponent extends Component {
                         <PrivateRoute path="/dashboard" component={CandidateDashboard} />
                         <PrivateRoute path="/view-candidate/:id" component={CandidatePageComponent} />
                         <PrivateRoute path="/transactions" component={Transaction} />
+                        <PrivateRoute path="/attached-employee" component={AttachedEmployee} />
                         <Route component={ErrorComponent} />
                         
                     </Switch>

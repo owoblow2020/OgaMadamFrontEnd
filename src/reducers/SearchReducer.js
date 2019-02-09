@@ -40,7 +40,7 @@ export const TransReducer = (state={}, action) =>{
 export const EmployeeByEmployerReducer = (state={}, action) => {
     switch (action.type) {
         case EMPLOYEE_BY_EMPLOYER_SUCCESS:
-            return action.trans.Data;    
+            return action;    
         default:
             return state;
     }
