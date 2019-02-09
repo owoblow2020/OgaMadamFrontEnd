@@ -11,6 +11,7 @@ import ErrorComponent from '../components/ErrorComponent';
 //import Test from '../components/Test';
 import Login from '../components/Login';
 import PrivateRoute from './PrivateRoute';
+import Transaction from '../components/dashboardPages/Transaction';
 
 class RouteComponent extends Component {
     state = {}
@@ -31,6 +32,7 @@ class RouteComponent extends Component {
                         {/* private route */}
                         <PrivateRoute path="/dashboard" component={CandidateDashboard} />
                         <PrivateRoute path="/view-candidate/:id" component={CandidatePageComponent} />
+                        <PrivateRoute path="/transactions" component={Transaction} />
                         <Route component={ErrorComponent} />
                         
                     </Switch>
