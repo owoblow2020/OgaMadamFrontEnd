@@ -1,24 +1,27 @@
 import React, { Component } from 'react';
 import Footer from '../Footer';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Sample from '../Headers/Sample';
-import {connect} from 'react-redux';
-import { fetchTransAction, employeeByEmployer, ticketByUserAction, notificationByUser } from '../../actions';
+import { connect } from 'react-redux';
+import {
+    fetchTransAction, employeeByEmployer,
+    ticketByUserAction, notificationByUser
+} from '../../actions';
 import MenuDashboard from '../dashboardPages/MenuDashboard';
 
 class CandidateDashboard extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
-            noOfTrans:0,
-            noOfEmployee:0,
-            noOfTicket:0,
-            noOfNotifcation:0
+            noOfTrans: 0,
+            noOfEmployee: 0,
+            noOfTicket: 0,
+            noOfNotifcation: 0
         }
     }
-    
+
     componentWillMount() {
-        if(this.props.details){
+        if (this.props.details) {
             this.props.onFetchTrans(this.props.details.id);
             this.props.onEmployee(this.props.details.id);
             this.props.onTicket(this.props.details.id);
@@ -28,12 +31,12 @@ class CandidateDashboard extends Component {
 
     componentDidUpdate(prevProps, prevState) {
         const newProps = this.props
-        if (prevProps.trans !== newProps.trans) {    
+        if (prevProps.trans !== newProps.trans) {
             this.setState({
-                noOfTrans:newProps.trans.length,
-                noOfEmployee:newProps.employee.length,
-                noOfTicket:newProps.ticket.length,
-                noOfNotifcation:newProps.notification.length
+                noOfTrans: newProps.trans.length,
+                noOfEmployee: newProps.employee.length,
+                noOfTicket: newProps.ticket.length,
+                noOfNotifcation: newProps.notification.length
             })
         }
     }
@@ -55,11 +58,11 @@ class CandidateDashboard extends Component {
                                                     <div className="row no-gape">
                                                         <div className="col-lg-4 col-md-4 col-sm-12">
                                                             <div className="p-category">
-                                                            <Link to="">
+                                                                <Link to="">
                                                                     <i className="la la-briefcase" />
                                                                     <span>Transactions</span>
                                                                     <p>{this.state.noOfTrans} Transactions</p>
-                                                               </Link>
+                                                                </Link>
                                                             </div>
                                                         </div>
                                                         <div className="col-lg-4 col-md-4 col-sm-12">
@@ -128,25 +131,25 @@ class CandidateDashboard extends Component {
     }
 }
 
-const mapStateToProps = (state) =>{
+const mapStateToProps = (state) => {
     return {
         details: state.AuthReducer,
         trans: state.TransReducer.trans,
         employee: state.EmployeeByEmployerReducer.trans,
-        ticket:state.TicketByUser,
-        notification:state.NotificationByUser
+        ticket: state.TicketByUser,
+        notification: state.NotificationByUser
     }
 }
 
-const mapDispatchToProps = (dispatch) =>{
+const mapDispatchToProps = (dispatch) => {
     return {
-        onFetchTrans: (employerId) =>{
+        onFetchTrans: (employerId) => {
             dispatch(fetchTransAction(employerId));
         },
-        onEmployee:(employerId) =>{
+        onEmployee: (employerId) => {
             dispatch(employeeByEmployer(employerId));
         },
-        onTicket: (userId) =>{
+        onTicket: (userId) => {
             dispatch(ticketByUserAction(userId));
         },
         onNotification: (userId) => {

@@ -15,11 +15,7 @@ class MenuDashboard extends Component {
                             </li>
                             <li >
                                 <Link to="/transactions"><i className="la la-money" />Transactions</Link>
-                                {/* <ul>
-                                                            <li><Link to="">My Profile</Link></li>
-                                                            <li><Link to="">Social Network</Link></li>
-                                                            <li><Link to="">Contact Information</Link></li>
-                                                        </ul> */}
+                                
                             </li>
 
                             <li >
@@ -30,12 +26,12 @@ class MenuDashboard extends Component {
                                 <Link to=""><i className="la la-paper-plane" />Reviews</Link>
 
                             </li>
-                            <li className="inner-child">
-                                <Link to=""><i className="la la-user" />Tickets</Link>
+                            <li >
+                                <Link to="/tickets"><i className="la la-user" />Tickets</Link>
 
                             </li>
-                            <li className="inner-child">
-                                <Link to=""><i className="la la-file-text" />Notifications</Link>
+                            <li >
+                                <Link to="/notifications"><i className="la la-file-text" />Notifications</Link>
 
                             </li>
                             <li className="inner-child">
