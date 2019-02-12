@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import Footer from '../Footer';
-import Sample from '../Headers/Sample';
+import Footer from './Footer';
+import Sample from './Headers/Sample';
 import { connect } from 'react-redux';
-import { workApply } from '../../actions';
+import { signupAction } from '../actions';
 
-class CandidateFormComponent extends Component {
+class Signup extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -13,17 +13,18 @@ class CandidateFormComponent extends Component {
             middleName: "",
             email: "",
             phoneNumber: "",
-            bvn: "",
-            nimc: "",
-            placeOfBirth: "",
-            category: "",
+            password: "",
+            confirmPassword: "",
+            placeOfWork: "",
+            nextOfKin: "",
             dateOfBirth: "",
             stateOfBirth: "",
             sex: "",
             address: "",
-            qualification: "",
+            nextOfKinPhone: "",
+            nextOfKinAddress: "",
             result: '',
-            submit: "Apply"
+            submit: "Signup"
         }
 
         this.onChange = this.onChange.bind(this);
@@ -43,20 +44,22 @@ class CandidateFormComponent extends Component {
     onSubmit(e) {
         e.preventDefault();
         this.setState({ submit: "Waiting...." })
-        this.props.onWorkApply({
+        this.props.onSignup({
             Email: this.state.email,
             FirstName: this.state.firstName,
             LastName: this.state.lastName,
             Address: this.state.address,
             DateOfBirth: this.state.dateOfBirth,
-            PlaceOfBirth: this.state.placeOfBirth,
+            placeOfWork: this.state.placeOfWork,
             MiddleName: this.state.middleName,
             PhoneNumber: this.state.phoneNumber,
             StateOfOrigin: this.state.stateOfBirth,
             Sex: this.state.sex,
-            BVN: this.state.bvn,
-            NIMC: this.state.nimc,
-            QualificationType: this.state.qualification
+            password: this.state.password,
+            confirmPassword: this.state.confirmPassword,
+            nextOfKinPhone: this.state.nextOfKinPhone,
+            nextOfKinAddress: this.state.nextOfKinAddress,
+            nextOfKin: this.state.nextOfKin
         });
 
 
@@ -64,39 +67,41 @@ class CandidateFormComponent extends Component {
 
     componentDidUpdate(prevProps, prevState) {
         const newProps = this.props
-        if (prevProps.param !== newProps.param) {
-           
+        if (prevProps.login !== newProps.login) {
+
             this.setState({
-                result: newProps.param,
-                submit: "Apply"
+                result: newProps.login,
+                submit: "Signup"
 
             });
         }
     }
 
     componentWillMount() {
-
+        this.setState({result:""},()=>console.log(this.state.result));
     }
 
     render() {
-        const warning = this.state.result.ResponseCode === 403 ?
+        const success = this.state.result.ResponseCode === 201 && this.state.result !== "" ?
 
-            <div className="alert alert-danger alert-dismissible fade show" style={{ height: 70, margintop: 50 }} role="alert">
-                <strong>Failed!</strong>   {this.props.param.Message}
+            (<div className="alert alert-success alert-dismissible fade show" style={{ height: 70, margintop: 50 }} role="alert">
+                <strong>Success!</strong>   {this.state.result.Message}
                 <button type="button" className="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
-            </div>
-            : ""
-        const success = this.state.result.ResponseCode === 200 ?
+            </div>)
+            :
+            ("")
 
-            <div className="alert alert-success alert-dismissible fade show" style={{ height: 70, margintop: 50 }} role="alert">
-                <strong>Failed!</strong>   {this.props.param.Message}
+        const warning = this.state.result.ResponseCode !== 201 && this.state.result !== "" ?
+        (<div className="alert alert-danger alert-dismissible fade show" style={{ height: 70, margintop: 50 }} role="alert">
+                <strong>Failed!</strong>   {this.state.result.Message}
                 <button type="button" className="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
-            </div>
-            : ""
+            </div>)
+            :("")
+
 
         return (
             <div>
@@ -109,8 +114,8 @@ class CandidateFormComponent extends Component {
                                     <div className="col-lg-12">
                                         <div className="inner2">
                                             <div className="inner-title2">
-                                                <h3>Application Page</h3>
-                                                <span>Workers application page</span>
+                                                <h3>Signup Page</h3>
+                                                <span>Employer's signup page</span>
                                             </div>
                                             <div className="page-breacrumbs">
                                                 {/* <ul className="breadcrumbs">
@@ -137,10 +142,10 @@ class CandidateFormComponent extends Component {
                                         <div className="padding-left">
                                             <div className="manage-jobs-sec">
                                                 {
-                                                    warning
+                                                    success
                                                 }
                                                 {
-                                                    success
+                                                    warning
                                                 }
                                                 <div className="border-title"><h3>Personal Details <span style={personalDetail}>(All fields mark * are mandatary)</span></h3></div>
 
@@ -166,7 +171,7 @@ class CandidateFormComponent extends Component {
                                                                 </div>
                                                             </div>
                                                             <div className="col-lg-6">
-                                                                <span className="pf-title">Email</span>
+                                                                <span className="pf-title">Email<span style={requiredFileds}>*</span></span>
                                                                 <div className="pf-field">
                                                                     <input name="email" onChange={this.onChange} value={this.state.email} placeholder="Enter Email address" type="text" className="" />
                                                                 </div>
@@ -175,49 +180,6 @@ class CandidateFormComponent extends Component {
                                                                 <span className="pf-title">Phone Number<span style={requiredFileds}>*</span></span>
                                                                 <div className="pf-field">
                                                                     <input name="phoneNumber" onChange={this.onChange} value={this.state.phoneNumber} placeholder="Enter Phone Number" required type="text" className="" />
-                                                                </div>
-                                                            </div>
-                                                            <div className="col-lg-6">
-                                                                <span className="pf-title">Field<span style={requiredFileds}>*</span></span>
-                                                                <div className="pf-field">
-                                                                    <select name="category" onChange={this.onChange} style={selectField} required data-placeholder="Select Job Category" className="chosen-container chosen">
-                                                                        <option>Select Job Category</option>
-                                                                        {
-                                                                            this.props.catParam.map(item =>
-                                                                                <option key={item.CategoryId} value={item.CategoryId}>{this.Capitalize(item.Title)}</option>
-                                                                            )
-                                                                        }
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                            <div className="col-lg-6">
-                                                                <span className="pf-title">Qualification<span style={requiredFileds}>*</span></span>
-                                                                <div className="pf-field">
-                                                                    <select name="qualification" onChange={this.onChange} style={selectField} required data-placeholder="Select sex type" className="chosen-container chosen">
-                                                                        <option>Select Sex type</option>
-                                                                        <option vale="Bsc">Bsc</option>
-                                                                        <option value="Ond">Ond</option>
-                                                                        <option value="Hnd">Hnd</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-
-                                                            <div className="col-lg-12">
-                                                                <span className="pf-title">Place of Birth<span style={requiredFileds}>*</span></span>
-                                                                <div className="pf-field">
-                                                                    <input name="placeOfBirth" onChange={this.onChange} value={this.state.placeOfBirth} placeholder="Enter place of Birth" required type="text" />
-                                                                </div>
-                                                            </div>
-                                                            <div className="col-lg-6">
-                                                                <span className="pf-title">BVN<span style={requiredFileds}>*</span></span>
-                                                                <div className="pf-field">
-                                                                    <input name="bvn" onChange={this.onChange} value={this.state.bvn} placeholder="Enter BVN number" required type="text" className="" />
-                                                                </div>
-                                                            </div>
-                                                            <div className="col-lg-6">
-                                                                <span className="pf-title">NIMC<span style={requiredFileds}>*</span></span>
-                                                                <div className="pf-field">
-                                                                    <input name="nimc" onChange={this.onChange} value={this.state.nimc} placeholder="Enter NIMC number" required type="text" className="" />
                                                                 </div>
                                                             </div>
                                                             <div className="col-lg-6">
@@ -236,6 +198,46 @@ class CandidateFormComponent extends Component {
                                                                     </select>
                                                                 </div>
                                                             </div>
+
+                                                            <div className="col-lg-6">
+                                                                <span className="pf-title">Password<span style={requiredFileds}>*</span></span>
+                                                                <div className="pf-field">
+                                                                    <input name="password" onChange={this.onChange} value={this.state.password} placeholder="******" required type="password" className="" />
+                                                                </div>
+                                                            </div>
+                                                            <div className="col-lg-6">
+                                                                <span className="pf-title">Confirm Password<span style={requiredFileds}>*</span></span>
+                                                                <div className="pf-field">
+                                                                    <input name="confirmPassword" onChange={this.onChange} value={this.state.confirmPassword} placeholder="******" required type="password" className="" />
+                                                                </div>
+                                                            </div>
+
+                                                            <div className="col-lg-6">
+                                                                <span className="pf-title">Place Of Work</span>
+                                                                <div className="pf-field">
+                                                                    <input name="placeOfWork" onChange={this.onChange} value={this.state.placeOfWork} placeholder="Enter Place of Work" required type="text" className="" />
+                                                                </div>
+                                                            </div>
+                                                            <div className="col-lg-6">
+                                                                <span className="pf-title">Next Of Kin<span style={requiredFileds}>*</span></span>
+                                                                <div className="pf-field">
+                                                                    <input name="nextOfKin" onChange={this.onChange} value={this.state.nextOfKin} placeholder="Enter Next of Kin" required type="text" className="datepicker" />
+                                                                </div>
+                                                            </div>
+
+                                                            <div className="col-lg-6">
+                                                                <span className="pf-title">Next of Kin Phone<span style={requiredFileds}>*</span></span>
+                                                                <div className="pf-field">
+                                                                    <input name="nextOfKinPhone" onChange={this.onChange} value={this.state.nextOfKinPhone} placeholder="Enter Next Of Kin Phone" required type="text" className="" />
+                                                                </div>
+                                                            </div>
+                                                            <div className="col-lg-6">
+                                                                <span className="pf-title">Next Of Kin Address<span style={requiredFileds}>*</span></span>
+                                                                <div className="pf-field">
+                                                                    <input name="nextOfKinAddress" onChange={this.onChange} value={this.state.nextOfKinAddress} placeholder="Next of kin address" required type="text" className="datepicker" />
+                                                                </div>
+                                                            </div>
+
                                                             <div className="col-lg-12">
                                                                 <span className="pf-title">State Of Birth<span style={requiredFileds}>*</span></span>
                                                                 <div className="pf-field">
@@ -295,6 +297,7 @@ class CandidateFormComponent extends Component {
     }
 }
 
+
 const selectField = {
     height: 50,
     paddingLeft: 10
@@ -312,16 +315,16 @@ const requiredFileds = {
 const mapStateToProps = (state) => {
     return {
         catParam: state.CategoryReducer.cat,
-        param: state.ApplyReducer.param
+        login: state.EmployerRegister
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onWorkApply: (workParam) => {
-            dispatch(workApply(workParam));
+        onSignup: (workParam) => {
+            dispatch(signupAction(workParam));
         }
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(CandidateFormComponent);
+export default connect(mapStateToProps, mapDispatchToProps)(Signup);

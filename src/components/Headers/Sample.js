@@ -50,7 +50,7 @@ class Sample extends Component {
             <div className="btn-extars">
                 <Link to="/apply" className="post-job-btn"><i className="la la-plus" />Apply Jobs</Link>
                 <ul className="account-btns">
-                    <li className="signup-popup"><i className="la la-key" /> Sign Up</li>
+                    <li className="signup-popup"><Link to="/signup"><i className="la la-key" /> Sign Up</Link></li>
                     <li className="signin-popup"><Link to="/login" ><i className="la la-external-link-square" /> Login</Link></li>
                 </ul>
             </div>

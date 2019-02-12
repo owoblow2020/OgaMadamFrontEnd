@@ -1,5 +1,5 @@
 import { takeLatest, put } from 'redux-saga/effects';
-import { LOGIN_TASK, HOME_SEARCH_WORKER, HOME_SEARCH_SUCCESS, HOME_LIST_CATEGORY, HOME_LIST_SUCCESS, HOME_LIST_WORKER, WORK_APPLY, WORK_APPLY_FAILED, FETCH_TRANSACTION, FETCH_TRANSACTION_SUCCESS, EMPLOYEE_BY_EMPLOYER, EMPLOYEE_BY_EMPLOYER_SUCCESS, TICKET_BY_USER, TICKET_BY_USER_SUCCESS, NOTIFICATION_BY_USER, NOTIFICATION_BY_USER_SUCCESS} from '../actions/actonTypes';
+import { LOGIN_TASK, HOME_SEARCH_WORKER, HOME_SEARCH_SUCCESS, HOME_LIST_CATEGORY, HOME_LIST_SUCCESS, HOME_LIST_WORKER, WORK_APPLY, WORK_APPLY_FAILED, FETCH_TRANSACTION, FETCH_TRANSACTION_SUCCESS, EMPLOYEE_BY_EMPLOYER, EMPLOYEE_BY_EMPLOYER_SUCCESS, TICKET_BY_USER, TICKET_BY_USER_SUCCESS, NOTIFICATION_BY_USER, NOTIFICATION_BY_USER_SUCCESS, EMPLOYER_REGISTER, EMPLOYER_REGISTER_SUCCESS, EMPLOYER_REGISTER_FAILED} from '../actions/actonTypes';
 import { Api } from './ApiSaga';
 import { loginActionSuccess, loginActionFailed} from '../actions';
 
@@ -149,5 +149,22 @@ function* notification(userId){
 }
 
 export function* watchNotification(){
-    yield takeLatest(NOTIFICATION_BY_USER, notification)
+    yield takeLatest(NOTIFICATION_BY_USER, notification);
+}
+
+function* employerLogin(userId){
+    try{
+        const ticket = yield Api.employerLogin(userId);
+        if(ticket.ResponseCode === 201){
+            yield put({type:EMPLOYER_REGISTER_SUCCESS, trans:ticket});
+         }else{
+             yield put({type:EMPLOYER_REGISTER_FAILED, trans:ticket})
+         }
+    }catch(err){
+        console.log(err);
+    }
+}
+
+export function* watchEmployerLogin(){
+    yield takeLatest(EMPLOYER_REGISTER, employerLogin);
 }

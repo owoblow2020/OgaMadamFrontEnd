@@ -1,5 +1,5 @@
 import {
-    EMPLOYEE_LOGIN_API, LOCAL_AUTHORIZATION, HOME_SEARCH_API, LIST_CATEGORY_API, HOME_SIX_WORKER, REGISTER_EMPLOYEE, TRANSACTION_BY_EMPLOYER, EMPLOYEE_BY_EMPLOYER_API, TICKET_API, NOTIFICATION_API
+    EMPLOYEE_LOGIN_API, LOCAL_AUTHORIZATION, HOME_SEARCH_API, LIST_CATEGORY_API, HOME_SIX_WORKER, REGISTER_EMPLOYEE, TRANSACTION_BY_EMPLOYER, EMPLOYEE_BY_EMPLOYER_API, TICKET_API, NOTIFICATION_API, REGISTER_API
 } from './Utility';
 
 function* getToken(inputName) {
@@ -184,6 +184,41 @@ function* getNotification(userId){
         });
 }
 
+function* employerLogin(param){
+    return yield fetch(REGISTER_API, {
+        method: "POST",
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+            Authorization: LOCAL_AUTHORIZATION
+        },
+        body: JSON.stringify({
+            "Password":param.workParam.password,
+            "Email":param.workParam.Email,
+            "FirstName":param.workParam.FirstName,
+            "LastName":param.workParam.LastName,
+            "Address":param.workParam.Address,
+            "DateOfBirth":param.workParam.DateOfBirth,
+            "PlaceOfBirth":param.workParam.PlaceOfBirth,
+            "MiddleName":param.workParam.MiddleName,
+            "PhoneNumber":param.workParam.PhoneNumber,
+            "StateOfOrigin":param.workParam.StateOfOrigin,
+            "ConfirmPassword":param.workParam.confirmPassword,
+            "Sex":param.workParam.Sex,
+            "PlaceOfWork":param.workParam.placeOfWork,
+            "NextOfKin":param.workParam.nextOfKin,
+            "NextOfKinPhone":param.workParam.nextOfKinPhone,
+            "NextOfKinAddress":param.workParam.nextOfKinAddress,
+            "Type":"Employer"
+        })
+    }).then((response) => response.json())
+        .then((responseJson) => {
+            return responseJson;
+        }).catch(function (err) {
+            console.log(err);
+        });
+}
+
 export const Api = {
     getToken,
     getHomeSearch,
@@ -193,5 +228,6 @@ export const Api = {
     getTransaction,
     getEmployeeByEmployer,
     getTicket,
-    getNotification
+    getNotification,
+    employerLogin
 }

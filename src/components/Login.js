@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Footer from './Footer';
-import HomeSignUpComponent from './Home/HomeSignUpComponent';
 import { Link, withRouter } from 'react-router-dom';
 import Sample from './Headers/Sample';
 import { loginAuth, authAction } from '../actions';
@@ -91,15 +90,15 @@ class Login extends Component {
                                     <div className="col-lg-12">
                                         <div className="inner2">
                                             <div className="inner-title2">
-                                                <h3>Login</h3>
-                                                <span>Keep up to date with the latest news</span>
+                                                <h3>Login Page</h3>
+                                                <span>Employers login page </span>
                                             </div>
                                             <div className="page-breacrumbs">
-                                                <ul className="breadcrumbs">
+                                                {/* <ul className="breadcrumbs">
                                                     <li><Link to="">Home</Link></li>
                                                     <li><Link to="">Pages</Link></li>
                                                     <li><Link to="">Login</Link></li>
-                                                </ul>
+                                                </ul> */}
                                             </div>
                                         </div>
                                     </div>
@@ -108,6 +107,7 @@ class Login extends Component {
                         </div>
                     </section>
                     <section>
+                        
                         <div className="block remove-bottom">
                             <div className="container">
                                 <div className="row">
@@ -117,7 +117,7 @@ class Login extends Component {
                                                 {
                                                     warning
                                                 }
-                                                <span>Lorem ipsum dolor sit amet consectetur adipiscing elit odio duis risus at lobortis ullamcorper</span>
+                                                <span>Employer login page to view list of trained and qualified workers on the platform</span>
                                                 <form onSubmit={this.onSubmit}>
                                                     <div className="cfield">
                                                         <input type="text" name="email" onChange={this.onChange} value={this.state.email} placeholder="Email" />
@@ -148,7 +148,7 @@ class Login extends Component {
                     </section>
                     <Footer />
                 </div>
-                <HomeSignUpComponent />
+                {/* <HomeSignUpComponent /> */}
             </div>
         );
     }

@@ -5,6 +5,7 @@ export const HOME_SEARCH_API = HOSTNAME + "/api/Service/SearchWorkers";
 export const LIST_CATEGORY_API = HOSTNAME + '/api/Service/ListCategory';
 export const HOME_SIX_WORKER = HOSTNAME + "/api/Service/ListSixWorkers";
 export const REGISTER_EMPLOYEE = HOSTNAME + "/api/Account/RegisterEmployee";
+export const REGISTER_API = HOSTNAME + "/api/Account/Register";
 export const TRANSACTION_BY_EMPLOYER = HOSTNAME + "/api/Service/TransactionByEmployer";
 export const EMPLOYEE_BY_EMPLOYER_API = HOSTNAME + "/api/Service/EmployeeByEmployer";
 export const TICKET_API = HOSTNAME + "/api/Service/TicketByUser";

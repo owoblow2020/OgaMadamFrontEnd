@@ -3,7 +3,7 @@ import { AuthReducer, LoginReducer } from './AuthReducer';
 import {
     SearchReducer, CategoryReducer,
     ApplyReducer, TransReducer, EmployeeByEmployerReducer,
-    TicketByUser, NotificationByUser
+    TicketByUser, NotificationByUser, EmployerRegister
 } from './SearchReducer';
 
 export const allReducer = combineReducers({
@@ -15,5 +15,6 @@ export const allReducer = combineReducers({
     TransReducer,
     EmployeeByEmployerReducer,
     TicketByUser,
-    NotificationByUser
+    NotificationByUser,
+    EmployerRegister
 });

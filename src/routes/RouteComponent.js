@@ -15,6 +15,7 @@ import Transaction from '../components/dashboardPages/Transaction';
 import AttachedEmployee from '../components/dashboardPages/AttachedEmployee';
 import Ticket from '../components/dashboardPages/Ticket';
 import UserNotification from '../components/dashboardPages/UserNotification';
+import Signup from '../components/Signup';
 
 class RouteComponent extends Component {
     state = {}
@@ -31,6 +32,7 @@ class RouteComponent extends Component {
                         <Route path="/candidate-list" component={CandidateListComponenet} />
                         {/* <Route path="/view-candidate/:id" component={CandidatePageComponent} /> */}
                         <Route path="/login" component={Login} />
+                        <Route path="/signup" component={Signup} />
                         {/* <Route path="/test" component={Test} /> */}
                         {/* private route */}
                         <PrivateRoute path="/dashboard" component={CandidateDashboard} />

@@ -1,4 +1,4 @@
-import { LOGIN_TASK, LOGIN_SUCCESS, AUTHENTICATION, HOME_SEARCH_WORKER, HOME_LIST_CATEGORY, HOME_LIST_WORKER, WORK_APPLY, LOGIN_FAILED, FETCH_TRANSACTION, EMPLOYEE_BY_EMPLOYER, TICKET_BY_USER, NOTIFICATION_BY_USER } from "./actonTypes";
+import { LOGIN_TASK, LOGIN_SUCCESS, AUTHENTICATION, HOME_SEARCH_WORKER, HOME_LIST_CATEGORY, HOME_LIST_WORKER, WORK_APPLY, LOGIN_FAILED, FETCH_TRANSACTION, EMPLOYEE_BY_EMPLOYER, TICKET_BY_USER, NOTIFICATION_BY_USER, EMPLOYER_REGISTER } from "./actonTypes";
 
 export const loginAuth = (inputName)=>{
     return{
@@ -75,6 +75,13 @@ export const listWorker =() =>{
 export const workApply = (workParam) =>{
     return {
         type:WORK_APPLY,
+        workParam
+    }
+}
+
+export const signupAction = (workParam) =>{
+    return {
+        type:EMPLOYER_REGISTER,
         workParam
     }
 }
