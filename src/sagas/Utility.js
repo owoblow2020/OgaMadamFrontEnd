@@ -1,5 +1,5 @@
 //api's
-export const HOSTNAME = 'http://35.178.210.241';
+export const HOSTNAME = 'http://154.113.0.163:9334';
 export const EMPLOYEE_LOGIN_API = HOSTNAME + "/api/Service/EmployeeLogin";
 export const HOME_SEARCH_API = HOSTNAME + "/api/Service/SearchWorkers";
 export const LIST_CATEGORY_API = HOSTNAME + '/api/Service/ListCategory';
